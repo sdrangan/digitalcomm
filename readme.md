@@ -17,8 +17,8 @@ preferred.
 ## Sequence
 
 * Introduction
-    * Course Admin [[pdf]](./lectures/CourseAdmin.pdf) [[Powerpoint]](./lectures/CourseAdmin.pptx)
+    * Course Admin [[pdf]](./Lectures/CourseAdmin.pdf) [[Powerpoint]](./Lectures/CourseAdmin.pptx)
 * Unit 1.  Passband modulation
-    * Lecture notes [[pdf]](./lectures/Unit01_Passband.pdf) [[Powerpoint]](./lectures/Unit01_Passband.pptx)
+    * Lecture notes [[pdf]](./Lectures/Unit01_Passband.pdf) [[Powerpoint]](./Lectures/Unit01_Passband.pptx)
     * Problems [[pdf]](./unit01_passband/prob_passband.pdf) [[Latex]](./unit01_passband/prob_passband.tex)
     * MATLAB exercise:  [Simulating up- and down-conversion](./unit01_passband/lab_passband_partial.m)
