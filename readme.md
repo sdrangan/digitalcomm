@@ -14,6 +14,21 @@ The class assumes graduate probability (stochastic processes) and
 undergraduate probability.  Familiarity with MATLAB or equivalent language is
 preferred.  
 
+## Using github 
+All the files in this repository are hosted on [github](https://github.com/).
+If you are not familiar with github, follow our [instructions](./basics/github.md)
+for accessing the files.
+
+## Feedback
+Any feedback is welcome.  If you find errors, have ideas for improvements,
+or want to voice any other thoughts, [create an issue](https://help.github.com/articles/creating-an-issue/)
+and we will try to get to it.
+Even better, fork the repository, make the changes yourself and
+[create a pull request](https://help.github.com/articles/about-pull-requests/)
+and we will try to merge it in.  See the [excellent instructions](https://github.com/ishjain/learnGithub/blob/master/updateMLrepo.md)
+from the former TA Ish Jain.
+
+
 ## Sequence
 
 * Introduction
@@ -22,3 +37,13 @@ preferred.
     * Lecture notes [[pdf]](./Lectures/Unit01_Passband.pdf) [[Powerpoint]](./Lectures/Unit01_Passband.pptx)
     * Problems [[pdf]](./unit01_passband/prob_passband.pdf) [[Latex]](./unit01_passband/prob_passband.tex)
     * MATLAB exercise:  [Simulating up- and down-conversion](./unit01_passband/lab_passband_partial.m)
+* Unit 2.  Stochastic process models for signals
+* Unit 3.  Transmit and receive filtering
+* Unit 4.  Symbol mapping and signal space theory
+* Unit 5.  Synchronization, match filtering
+* Unit 6.  Symbol demodulation
+* Unit 7.  Equalization
+* Unit 8.  Linear codes
+* Unit 9.  Convolutional and turbo codes
+* Unit 10.  Information theory
+
