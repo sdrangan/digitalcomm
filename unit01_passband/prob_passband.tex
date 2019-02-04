@@ -175,7 +175,7 @@
 
 \begin{enumerate}
 
-\item \emph{Passband conversion.} 
+\item \emph{Passband conversion.}
 Let $u(t)$ be a complex baseband signal with the real and imaginary parts of
  the spectrum (Fourier Transform) shown in
 Fig.~\ref{fig:Ubb}.  The constants are $f_0 = $ 5 MHz, $f_1 = $ 10 MHz, $A=8$ and $B=10$.
@@ -257,11 +257,11 @@ Consider a communication system with three steps:
 for some $f_c$.
 \item The real passband channel is passed through a linear filter,
 \[
-    \frac{dy_p(t)}{dt} = b x_p(t)- ay_p(t),
+    \frac{dy_p(t)}{dt} = b u_p(t)- ay_p(t),
 \]
 with constants $a$ and $b>0$.
 \item The received signal is downconverted, $v(t)=2y_p(t)e^{-2\pi i f_ct}$ and
-$y(t)=h(t)*v(t)$ where $h(t)$ is an ideal low-pass filter.
+$y(t)=h_{\rm LPF}(t)*v(t)$ where $h_{\rm LPF}(t)$ is an ideal low-pass filter.
 \end{itemize}
 \begin{enumerate}[(a)]
 \item What is the real passband frequency response, $H_p(f) = \frac{Y_p(f)}{U_p(f)}$?
@@ -282,7 +282,7 @@ Suppose that a real passband signal has two components:
     x(t)=x_0(t)+x_1(t),
 \]
 where $x_0(t)$ is a desired signal, and $x_1(t)$ is an interfering signal.  They have PSD
-$S_i(f)=A_i\Rect((f-f_i)/W_i)$, $i=1,2$ with parameters:
+$S_i(f)=A_i\Rect((f-f_i)/W_i)$, $i=0,1$ with parameters:
 \begin{itemize}
 \item Desired signal: $f_0 = 2.50$ GHz, $W_0 = $ 20~MHz, total receive power $P_0$ = -100~dBm.
 \item Interfering signal: $f_1 = 2.53$ GHz, $W_1 = $ 10~MHz, total receive power $P_1$ = -80~dBm.
