@@ -30,6 +30,7 @@ from the former TA Ish Jain.
 
 
 ## Sequence
+We will add to this section as the class progresses.
 
 * Introduction
     * Course Admin [[pdf]](./Lectures/CourseAdmin.pdf) [[Powerpoint]](./Lectures/CourseAdmin.pptx)
@@ -37,9 +38,12 @@ from the former TA Ish Jain.
     * Lecture notes [[pdf]](./Lectures/Unit01_Passband.pdf) [[Powerpoint]](./Lectures/Unit01_Passband.pptx)
     * Problems [[pdf]](./unit01_passband/prob_passband.pdf) [[Latex]](./unit01_passband/prob_passband.tex)
     * MATLAB exercise:  [Simulating up- and down-conversion](./unit01_passband/lab_passband_partial.m)
-* Unit 2.  Stochastic process models for signals
-* Unit 3.  Transmit and receive filtering
-* Unit 4.  Symbol mapping and signal space theory
+* Unit 2.  Symbol mapping and transmit filtering
+    * Lecture notes [[pdf]](./Lectures/Unit02_TxFilter.pdf) [[Powerpoint]](./Lectures/Unit02_TxFilter.pptx)
+    * Problems [[pdf]](./unit02_tx_filter/prob_tx_filter.pdf) [[Latex]](./unit02_tx_filter/prob_tx_filter.tex)
+    * MATLAB exercise:  Filter design [To be added]  
+* Unit 3.  Receive filtering 
+* Unit 4.  Signal space theory
 * Unit 5.  Synchronization, match filtering
 * Unit 6.  Symbol demodulation
 * Unit 7.  Equalization
