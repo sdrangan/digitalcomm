@@ -41,7 +41,7 @@ We will add to this section as the class progresses.
 * Unit 2.  Symbol mapping and transmit filtering
     * Lecture notes [[pdf]](./Lectures/Unit02_TxFilter.pdf) [[Powerpoint]](./Lectures/Unit02_TxFilter.pptx)
     * Problems [[pdf]](./unit02_tx_filter/prob_tx_filter.pdf) [[Latex]](./unit02_tx_filter/prob_tx_filter.tex)
-    * MATLAB exercise:  Filter design [To be added]  
+    * MATLAB exercise:  [802.11ad TX Filter design](./unit02_tx_filter/lab_tx_filt.m)  
 * Unit 3.  Receive filtering 
 * Unit 4.  Signal space theory
 * Unit 5.  Synchronization, match filtering
