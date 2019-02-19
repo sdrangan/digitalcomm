@@ -2,8 +2,8 @@
 
 This repository provides instructional material for 
 digital communications.  The material is used for 
-*EL-GY 6013: Digital Communications* taught at NYU Tandon
-by [Sundeep Rangan](http://wireless.engineering.nyu.edu/sundeep-rangan/):
+*EL-GY 6013: Digital Communications*, a graduate level class at NYU Tandon,
+taught by [Sundeep Rangan](http://wireless.engineering.nyu.edu/sundeep-rangan/):
 
 Anyone is free to use and copy this material (at their own risk!).
 But, please cite the material if you use the material in your own class.
@@ -11,7 +11,8 @@ But, please cite the material if you use the material in your own class.
 ## Pre-requisites
 
 The class assumes graduate probability (stochastic processes) and 
-undergraduate probability.  Familiarity with MATLAB or equivalent language is
+undergraduate signals and systems.  
+Familiarity with MATLAB or equivalent language is
 preferred.  
 
 ## Using github 
@@ -43,11 +44,13 @@ We will add to this section as the class progresses.
     * Problems [[pdf]](./unit02_tx_filter/prob_tx_filter.pdf) [[Latex]](./unit02_tx_filter/prob_tx_filter.tex)
     * MATLAB exercise:  [802.11ad TX Filter design](./unit02_tx_filter/lab_tx_filt_partial.m)  
 * Unit 3.  Receive filtering 
+    * Lecture notes [[pdf]](./Lectures/Unit03_RxFilter.pdf) [[Powerpoint]](./Lectures/Unit03_RxFilter.pptx)
 * Unit 4.  Signal space theory
-* Unit 5.  Synchronization, match filtering
+* Unit 5.  Noise and random process models
 * Unit 6.  Symbol demodulation
-* Unit 7.  Equalization
-* Unit 8.  Linear codes
-* Unit 9.  Convolutional and turbo codes
-* Unit 10.  Information theory
+* Unit 7.  Synchronization, match filtering
+* Unit 8.  Equalization
+* Unit 9.  Linear codes
+* Unit 10.  Convolutional and turbo codes
+* Unit 11.  Information theory
 
