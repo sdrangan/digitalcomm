@@ -45,6 +45,7 @@ We will add to this section as the class progresses.
     * MATLAB exercise:  [802.11ad TX Filter design](./unit02_tx_filter/lab_tx_filt_partial.m)  
 * Unit 3.  Receive filtering 
     * Lecture notes [[pdf]](./Lectures/Unit03_RxFilter.pdf) [[Powerpoint]](./Lectures/Unit03_RxFilter.pptx)
+    * Problems [[pdf]](./unit03_rx_filter/prob_rx_filter.pdf) [[Latex]](./unit03_rx_filter/prob_rx_filter.tex)
 * Unit 4.  Signal space theory
 * Unit 5.  Noise and random process models
 * Unit 6.  Symbol demodulation
