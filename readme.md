@@ -46,6 +46,7 @@ We will add to this section as the class progresses.
 * Unit 3.  Receive filtering 
     * Lecture notes [[pdf]](./Lectures/Unit03_RxFilter.pdf) [[Powerpoint]](./Lectures/Unit03_RxFilter.pptx)
     * Problems [[pdf]](./unit03_rx_filter/prob_rx_filter.pdf) [[Latex]](./unit03_rx_filter/prob_rx_filter.tex)
+    * MATLAB exercise:  [Building a 5G channel sounder](./unit03_rx_filter/lab_chan_sounder_partial.m)
 * Unit 4.  Signal space theory
 * Unit 5.  Noise and random process models
 * Unit 6.  Symbol demodulation
