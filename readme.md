@@ -48,6 +48,7 @@ We will add to this section as the class progresses.
     * Problems [[pdf]](./unit03_rx_filter/prob_rx_filter.pdf) [[Latex]](./unit03_rx_filter/prob_rx_filter.tex)
     * MATLAB exercise:  [Building a 5G channel sounder](./unit03_rx_filter/lab_chan_sounder_partial.m)
 * Unit 4.  Signal space theory
+    * Lecture notes [[pdf]](./Lectures/Unit04_SignalSpace.pdf) [[Powerpoint]](./Lectures/Unit04_SignalSpace.pptx)
 * Unit 5.  Noise and random process models
 * Unit 6.  Symbol demodulation
 * Unit 7.  Synchronization, match filtering
