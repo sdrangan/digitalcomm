@@ -1,0 +1,259 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath, amssymb, bm, cite, epsfig, psfrag}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{enumerate}
+\usepackage[outercaption]{sidecap}
+\usetikzlibrary{shapes,arrows}
+%\usetikzlibrary{dsp,chains}
+
+%\restylefloat{figure}
+%\theoremstyle{plain}      \newtheorem{theorem}{Theorem}
+%\theoremstyle{definition} \newtheorem{definition}{Definition}
+
+\def\del{\partial}
+\def\ds{\displaystyle}
+\def\ts{\textstyle}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\beqa{\begin{eqnarray}}
+\def\eeqa{\end{eqnarray}}
+\def\beqan{\begin{eqnarray*}}
+\def\eeqan{\end{eqnarray*}}
+\def\nn{\nonumber}
+\def\binomial{\mathop{\mathrm{binomial}}}
+\def\half{{\ts\frac{1}{2}}}
+\def\Half{{\frac{1}{2}}}
+\def\N{{\mathbb{N}}}
+\def\Z{{\mathbb{Z}}}
+\def\Q{{\mathbb{Q}}}
+\def\F{{\mathbb{F}}}
+\def\R{{\mathbb{R}}}
+\def\C{{\mathbb{C}}}
+\def\argmin{\mathop{\mathrm{arg\,min}}}
+\def\argmax{\mathop{\mathrm{arg\,max}}}
+%\def\span{\mathop{\mathrm{span}}}
+\def\diag{\mathop{\mathrm{diag}}}
+\def\x{\times}
+\def\limn{\lim_{n \rightarrow \infty}}
+\def\liminfn{\liminf_{n \rightarrow \infty}}
+\def\limsupn{\limsup_{n \rightarrow \infty}}
+\def\GV{Guo and Verd{\'u}}
+\def\MID{\,|\,}
+\def\MIDD{\,;\,}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{assumption}{Assumption}
+\newtheorem{claim}{Claim}
+\def\qed{\mbox{} \hfill $\Box$}
+\setlength{\unitlength}{1mm}
+
+\def\bhat{\widehat{b}}
+\def\ehat{\widehat{e}}
+\def\phat{\widehat{p}}
+\def\qhat{\widehat{q}}
+\def\rhat{\widehat{r}}
+\def\shat{\widehat{s}}
+\def\uhat{\widehat{u}}
+\def\ubar{\overline{u}}
+\def\vhat{\widehat{v}}
+\def\xhat{\widehat{x}}
+\def\xbar{\overline{x}}
+\def\zhat{\widehat{z}}
+\def\zbar{\overline{z}}
+\def\la{\leftarrow}
+\def\ra{\rightarrow}
+\def\MSE{\mbox{\small \sffamily MSE}}
+\def\SNR{\mbox{\small \sffamily SNR}}
+\def\SINR{\mbox{\small \sffamily SINR}}
+\def\arr{\rightarrow}
+\def\Exp{\mathbb{E}}
+\def\var{\mbox{var}}
+\def\Tr{\mbox{Tr}}
+\def\tm1{t\! - \! 1}
+\def\tp1{t\! + \! 1}
+
+\def\Xset{{\cal X}}
+
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\abf}{\mathbf{a}}
+\newcommand{\bbf}{\mathbf{b}}
+\newcommand{\dbf}{\mathbf{d}}
+\newcommand{\ebf}{\mathbf{e}}
+\newcommand{\gbf}{\mathbf{g}}
+\newcommand{\hbf}{\mathbf{h}}
+\newcommand{\pbf}{\mathbf{p}}
+\newcommand{\pbfhat}{\widehat{\mathbf{p}}}
+\newcommand{\qbf}{\mathbf{q}}
+\newcommand{\qbfhat}{\widehat{\mathbf{q}}}
+\newcommand{\rbf}{\mathbf{r}}
+\newcommand{\rbfhat}{\widehat{\mathbf{r}}}
+\newcommand{\sbf}{\mathbf{s}}
+\newcommand{\sbfhat}{\widehat{\mathbf{s}}}
+\newcommand{\ubf}{\mathbf{u}}
+\newcommand{\ubfhat}{\widehat{\mathbf{u}}}
+\newcommand{\utildebf}{\tilde{\mathbf{u}}}
+\newcommand{\vbf}{\mathbf{v}}
+\newcommand{\vbfhat}{\widehat{\mathbf{v}}}
+\newcommand{\wbf}{\mathbf{w}}
+\newcommand{\wbfhat}{\widehat{\mathbf{w}}}
+\newcommand{\xbf}{\mathbf{x}}
+\newcommand{\xbfhat}{\widehat{\mathbf{x}}}
+\newcommand{\xbfbar}{\overline{\mathbf{x}}}
+\newcommand{\ybf}{\mathbf{y}}
+\newcommand{\zbf}{\mathbf{z}}
+\newcommand{\zbfbar}{\overline{\mathbf{z}}}
+\newcommand{\zbfhat}{\widehat{\mathbf{z}}}
+\newcommand{\Ahat}{\widehat{A}}
+\newcommand{\Abf}{\mathbf{A}}
+\newcommand{\Bbf}{\mathbf{B}}
+\newcommand{\Cbf}{\mathbf{C}}
+\newcommand{\Bbfhat}{\widehat{\mathbf{B}}}
+\newcommand{\Dbf}{\mathbf{D}}
+\newcommand{\Gbf}{\mathbf{G}}
+\newcommand{\Hbf}{\mathbf{H}}
+\newcommand{\Kbf}{\mathbf{K}}
+\newcommand{\Pbf}{\mathbf{P}}
+\newcommand{\Phat}{\widehat{P}}
+\newcommand{\Qbf}{\mathbf{Q}}
+\newcommand{\Rbf}{\mathbf{R}}
+\newcommand{\Rhat}{\widehat{R}}
+\newcommand{\Sbf}{\mathbf{S}}
+\newcommand{\Ubf}{\mathbf{U}}
+\newcommand{\Vbf}{\mathbf{V}}
+\newcommand{\Wbf}{\mathbf{W}}
+\newcommand{\Xhat}{\widehat{X}}
+\newcommand{\Xbf}{\mathbf{X}}
+\newcommand{\Ybf}{\mathbf{Y}}
+\newcommand{\Zbf}{\mathbf{Z}}
+\newcommand{\Zhat}{\widehat{Z}}
+\newcommand{\Zbfhat}{\widehat{\mathbf{Z}}}
+\def\alphabf{{\boldsymbol \alpha}}
+\def\betabf{{\boldsymbol \beta}}
+\def\mubf{{\boldsymbol \mu}}
+\def\lambdabf{{\boldsymbol \lambda}}
+\def\etabf{{\boldsymbol \eta}}
+\def\xibf{{\boldsymbol \xi}}
+\def\taubf{{\boldsymbol \tau}}
+\def\sigmahat{{\widehat{\sigma}}}
+\def\thetabf{{\bm{\theta}}}
+\def\thetabfhat{{\widehat{\bm{\theta}}}}
+\def\thetahat{{\widehat{\theta}}}
+\def\mubar{\overline{\mu}}
+\def\muavg{\mu}
+\def\sigbf{\bm{\sigma}}
+\def\etal{\emph{et al.}}
+\def\Ggothic{\mathfrak{G}}
+\def\Pset{{\mathcal P}}
+\newcommand{\bigCond}[2]{\bigl({#1} \!\bigm\vert\! {#2} \bigr)}
+\newcommand{\BigCond}[2]{\Bigl({#1} \!\Bigm\vert\! {#2} \Bigr)}
+
+\def\Rect{\mathop{Rect}}
+\def\sinc{\mathop{sinc}}
+\def\Real{\mathrm{Re}}
+\def\Imag{\mathrm{Im}}
+\newcommand{\bkt}[1]{{\langle #1 \rangle}}
+
+
+
+\begin{document}
+
+\title{Problems:  Signal Space}
+\author{Prof.\ Sundeep Rangan}
+\date{}
+
+\maketitle
+
+\begin{enumerate}
+
+\item \emph{Vector spaces and bases in $\F^N$.}  For each set $V$ below,
+identify if it is a vector space or not.  If it is a vector space, find a basis.
+If not, state the property that fails to occur.
+\begin{enumerate}[(a)]
+  \item $V = $ the set of $(x_1,x_2,x_3)$ such that $2x_1 + x_2 = 0$.
+  \item $V = $ the set of $\xbf \in \R^3$ with $\|\xbf\|\leq 1$.
+\end{enumerate}
+
+\item \emph{Vector spaces of functions.}  For each set $V$ below,
+state if $V$ is a subspace or not.  Explain.
+\begin{enumerate}[(a)]
+  \item Let $T> 0$ be some sampling period.
+  $V = $ the set of $f(t)$ such that $f(nT)=0$ for all $n$.
+  \item Let $f_{max} > 0$.  $V$ is the set of $s(t)$ that are bandlimited so that
+  $S(f)=0$ for $|f| > f_{max}$.
+  \item $V=$ set of functions on $[0,\infty)$ of the form, $f(t) = Ae^{-(t-\tau)}$ for 
+  some $A$ and $\tau$.
+  \item $V=$ set of functions on $[0,\infty)$ of the form, $f(t) = Ae^{-Bt}$ for some $A$ and $B$.
+\end{enumerate}
+
+
+\item \emph{Signal set and signal space}. Let $N$ and $K$ be constants and
+consider the signal set ${\mathcal S}$ consisting
+of signals $s[n]$ such that $s[n]=1$ in \emph{exactly} $K$ times $n\in [0,1,\ldots,N-1]$.
+For all other $n$, $s[n]=0$.
+\begin{enumerate}[(a)]
+\item Find $M$, the number of signals in ${\mathcal S}$.
+\item Find the number of degrees of freedom.
+\item Find the rate of signal set.
+\end{enumerate}
+This type of signal set can encode information by the position of the non-zero elements.
+
+
+\item \emph{Signal set and signal space.}  Consider the following four functions:
+\[
+    s(t) = e^{-At + B}, t \geq 0,
+\]
+where $A = 1$ or $2$ and $B=0$ or 1.
+\begin{enumerate}[(a)]
+\item Find a basis for a signal space containing the signal set.
+Use a basis with a minimum number of signals.
+\item Find the coordinates of each signals in the basis.
+\end{enumerate}
+
+
+
+\item \emph{Bandlimited channels.}  Suppose that a communication system is allocated
+a channel 2.29 to 2.31 GHz and has 10\% overhead.
+\begin{enumerate}[(a)]
+\item What are the (complex) degrees of freedom per second?
+\item What is the spectral efficiency required for 40 Mbps?
+\item What is the rate if the system uses 16-QAM on every degree of freedom?
+\item If the signal is received at -100 dBm, what is the average energy per degree of freedom.
+\end{enumerate}
+
+
+
+\item \emph{Orthonormal bases}  Suppose that a signal space has a basis $s_1(t)$, $s_2(t)$ with
+\[
+    \|s_1\|^2 = \|s_2\|^2 = 1, \bkt{s_1,s_2} = \rho.
+\]
+\begin{enumerate}[(a)]
+\item Using Gram-Schmidt, find an orthonormal basis $u_1$, $u_2$ for the signal space.
+\item Write $s_1$ and $s_2$ in terms of $u_1$ and $u_2$.
+\item Suppose a signal is transmitted as,
+\[
+    s(t) = a_1 s_1(t) + a_2 s_2(t).
+\]
+Find the coordinates of $s(t)$ in the $u_1(t),u_2(t)$ basis.
+That is, find $b_1,b_2$ in terms of $(a_1,a_2)$ such that $s(t) = b_1u_1(t) + b_2 u_2(t)$
+
+\item Find $b_1,b_2$ for the four constellation points $a_1=a_2 = \pm 1$ and $\rho = 0.2$.
+\end{enumerate}
+
+
+\end{enumerate}
+
+\end{document}
+
