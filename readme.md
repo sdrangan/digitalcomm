@@ -50,11 +50,14 @@ We will add to this section as the class progresses.
 * Unit 4.  Signal space theory
     * Lecture notes [[pdf]](./Lectures/Unit04_SignalSpace.pdf) [[Powerpoint]](./Lectures/Unit04_SignalSpace.pptx)
     * Problems [[pdf]](./unit04_sig_space/prob_sig_space.pdf) [[Latex]](./unit04_sig_space/prob_sig_space.tex)
-* Unit 5.  Noise and random process models
+* Unit 5.  Noise and random processes
+    * Lecture notes [[pdf]](./Lectures/Unit05_RandProc.pdf) [[Powerpoint]](./Lectures/Unit05_RandProc.pptx)
+    * Problems:  To be added
+    * MATLAB exercise:  To be added
 * Unit 6.  Symbol demodulation
 * Unit 7.  Synchronization, match filtering
 * Unit 8.  Equalization
 * Unit 9.  Linear codes
 * Unit 10.  Convolutional and turbo codes
-* Unit 11.  Information theory
+
 
