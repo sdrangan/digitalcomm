@@ -52,7 +52,7 @@ We will add to this section as the class progresses.
     * Problems [[pdf]](./unit04_sig_space/prob_sig_space.pdf) [[Latex]](./unit04_sig_space/prob_sig_space.tex)
 * Unit 5.  Noise and random processes
     * Lecture notes [[pdf]](./Lectures/Unit05_RandProc.pdf) [[Powerpoint]](./Lectures/Unit05_RandProc.pptx)
-    * Problems:  To be added
+    * Problems [[pdf]](./unit05_rand_process/prob_rand_proc.pdf) [[Latex]](./unit05_rand_process/prob_rand_proc.tex)
     * MATLAB exercise:  To be added
 * Unit 6.  Symbol demodulation
 * Unit 7.  Synchronization, match filtering
