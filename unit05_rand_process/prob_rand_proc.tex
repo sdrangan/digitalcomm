@@ -1,0 +1,273 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath, amssymb, bm, cite, epsfig, psfrag}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{enumerate}
+\usepackage[outercaption]{sidecap}
+\usetikzlibrary{shapes,arrows}
+%\usetikzlibrary{dsp,chains}
+
+%\restylefloat{figure}
+%\theoremstyle{plain}      \newtheorem{theorem}{Theorem}
+%\theoremstyle{definition} \newtheorem{definition}{Definition}
+
+\def\del{\partial}
+\def\ds{\displaystyle}
+\def\ts{\textstyle}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\beqa{\begin{eqnarray}}
+\def\eeqa{\end{eqnarray}}
+\def\beqan{\begin{eqnarray*}}
+\def\eeqan{\end{eqnarray*}}
+\def\nn{\nonumber}
+\def\binomial{\mathop{\mathrm{binomial}}}
+\def\half{{\ts\frac{1}{2}}}
+\def\Half{{\frac{1}{2}}}
+\def\N{{\mathbb{N}}}
+\def\Z{{\mathbb{Z}}}
+\def\Q{{\mathbb{Q}}}
+\def\F{{\mathbb{F}}}
+\def\R{{\mathbb{R}}}
+\def\C{{\mathbb{C}}}
+\def\argmin{\mathop{\mathrm{arg\,min}}}
+\def\argmax{\mathop{\mathrm{arg\,max}}}
+%\def\span{\mathop{\mathrm{span}}}
+\def\diag{\mathop{\mathrm{diag}}}
+\def\x{\times}
+\def\limn{\lim_{n \rightarrow \infty}}
+\def\liminfn{\liminf_{n \rightarrow \infty}}
+\def\limsupn{\limsup_{n \rightarrow \infty}}
+\def\GV{Guo and Verd{\'u}}
+\def\MID{\,|\,}
+\def\MIDD{\,;\,}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{assumption}{Assumption}
+\newtheorem{claim}{Claim}
+\def\qed{\mbox{} \hfill $\Box$}
+\setlength{\unitlength}{1mm}
+
+\def\bhat{\widehat{b}}
+\def\ehat{\widehat{e}}
+\def\phat{\widehat{p}}
+\def\qhat{\widehat{q}}
+\def\rhat{\widehat{r}}
+\def\shat{\widehat{s}}
+\def\uhat{\widehat{u}}
+\def\ubar{\overline{u}}
+\def\vhat{\widehat{v}}
+\def\xhat{\widehat{x}}
+\def\xbar{\overline{x}}
+\def\zhat{\widehat{z}}
+\def\zbar{\overline{z}}
+\def\la{\leftarrow}
+\def\ra{\rightarrow}
+\def\MSE{\mbox{\small \sffamily MSE}}
+\def\SNR{\mbox{\small \sffamily SNR}}
+\def\SINR{\mbox{\small \sffamily SINR}}
+\def\arr{\rightarrow}
+\def\Exp{\mathbb{E}}
+\def\var{\mbox{var}}
+\def\Tr{\mbox{Tr}}
+\def\tm1{t\! - \! 1}
+\def\tp1{t\! + \! 1}
+
+\def\Xset{{\cal X}}
+
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\abf}{\mathbf{a}}
+\newcommand{\bbf}{\mathbf{b}}
+\newcommand{\dbf}{\mathbf{d}}
+\newcommand{\ebf}{\mathbf{e}}
+\newcommand{\gbf}{\mathbf{g}}
+\newcommand{\hbf}{\mathbf{h}}
+\newcommand{\pbf}{\mathbf{p}}
+\newcommand{\pbfhat}{\widehat{\mathbf{p}}}
+\newcommand{\qbf}{\mathbf{q}}
+\newcommand{\qbfhat}{\widehat{\mathbf{q}}}
+\newcommand{\rbf}{\mathbf{r}}
+\newcommand{\rbfhat}{\widehat{\mathbf{r}}}
+\newcommand{\sbf}{\mathbf{s}}
+\newcommand{\sbfhat}{\widehat{\mathbf{s}}}
+\newcommand{\ubf}{\mathbf{u}}
+\newcommand{\ubfhat}{\widehat{\mathbf{u}}}
+\newcommand{\utildebf}{\tilde{\mathbf{u}}}
+\newcommand{\vbf}{\mathbf{v}}
+\newcommand{\vbfhat}{\widehat{\mathbf{v}}}
+\newcommand{\wbf}{\mathbf{w}}
+\newcommand{\wbfhat}{\widehat{\mathbf{w}}}
+\newcommand{\xbf}{\mathbf{x}}
+\newcommand{\xbfhat}{\widehat{\mathbf{x}}}
+\newcommand{\xbfbar}{\overline{\mathbf{x}}}
+\newcommand{\ybf}{\mathbf{y}}
+\newcommand{\zbf}{\mathbf{z}}
+\newcommand{\zbfbar}{\overline{\mathbf{z}}}
+\newcommand{\zbfhat}{\widehat{\mathbf{z}}}
+\newcommand{\Ahat}{\widehat{A}}
+\newcommand{\Abf}{\mathbf{A}}
+\newcommand{\Bbf}{\mathbf{B}}
+\newcommand{\Cbf}{\mathbf{C}}
+\newcommand{\Bbfhat}{\widehat{\mathbf{B}}}
+\newcommand{\Dbf}{\mathbf{D}}
+\newcommand{\Gbf}{\mathbf{G}}
+\newcommand{\Hbf}{\mathbf{H}}
+\newcommand{\Kbf}{\mathbf{K}}
+\newcommand{\Pbf}{\mathbf{P}}
+\newcommand{\Phat}{\widehat{P}}
+\newcommand{\Qbf}{\mathbf{Q}}
+\newcommand{\Rbf}{\mathbf{R}}
+\newcommand{\Rhat}{\widehat{R}}
+\newcommand{\Sbf}{\mathbf{S}}
+\newcommand{\Ubf}{\mathbf{U}}
+\newcommand{\Vbf}{\mathbf{V}}
+\newcommand{\Wbf}{\mathbf{W}}
+\newcommand{\Xhat}{\widehat{X}}
+\newcommand{\Xbf}{\mathbf{X}}
+\newcommand{\Ybf}{\mathbf{Y}}
+\newcommand{\Zbf}{\mathbf{Z}}
+\newcommand{\Zhat}{\widehat{Z}}
+\newcommand{\Zbfhat}{\widehat{\mathbf{Z}}}
+\def\alphabf{{\boldsymbol \alpha}}
+\def\betabf{{\boldsymbol \beta}}
+\def\mubf{{\boldsymbol \mu}}
+\def\lambdabf{{\boldsymbol \lambda}}
+\def\etabf{{\boldsymbol \eta}}
+\def\xibf{{\boldsymbol \xi}}
+\def\taubf{{\boldsymbol \tau}}
+\def\sigmahat{{\widehat{\sigma}}}
+\def\thetabf{{\bm{\theta}}}
+\def\thetabfhat{{\widehat{\bm{\theta}}}}
+\def\thetahat{{\widehat{\theta}}}
+\def\mubar{\overline{\mu}}
+\def\muavg{\mu}
+\def\sigbf{\bm{\sigma}}
+\def\etal{\emph{et al.}}
+\def\Ggothic{\mathfrak{G}}
+\def\Pset{{\mathcal P}}
+\newcommand{\bigCond}[2]{\bigl({#1} \!\bigm\vert\! {#2} \bigr)}
+\newcommand{\BigCond}[2]{\Bigl({#1} \!\Bigm\vert\! {#2} \Bigr)}
+
+\def\Rect{\mathop{Rect}}
+\def\sinc{\mathop{sinc}}
+\def\Real{\mathrm{Re}}
+\def\Imag{\mathrm{Im}}
+\newcommand{\bkt}[1]{{\langle #1 \rangle}}
+
+
+
+\begin{document}
+
+\title{Problems:  Probability and Random Processes}
+\author{Prof.\ Sundeep Rangan}
+\date{}
+
+\maketitle
+
+\begin{enumerate}
+
+\item \emph{Functions of random variables.}
+A common model for path loss between a transmitter and receiver is:
+\[
+    L = 32.4 + 17.3 \log_{10}(d) + 20\log_{10}(f_c)+ \xi, \quad \xi \sim {\mathcal N}(0,\sigma^2) \mbox{ [dB], }
+\]
+where $d$ is the distance in meters, $f_c$ is the carrier frequency
+in GHz, and $\sigma=3.0$ dB. Let $G= 10^{-0.1L}$ be the channel power
+gain in linear scale.
+\begin{enumerate}[(a)]
+\item What is $\Exp(L)$, the average path loss in dB?
+\item What is $-10\log_{10}(\Exp(G))$, the path loss, averaged in linear scale?
+
+\end{enumerate}
+
+
+
+\item \emph{Joint density}.  Consider the joint density,
+\[
+    p(x,y) = xe^{-x(y+1)}, \quad x,y \geq 0.
+\]
+\begin{enumerate}[(a)]
+  \item Find the marginal density $f(x)$.
+  \item Find the conditional density $f(y|x)$?
+  \item Find the conditional expectation $\Exp(Y|X=x)$.
+(Hint: You could use integration by parts, or
+you may use that
+$\int_0^\infty x^k e^{-ax}dx = {k!}/{a^{k+1}}$
+holds for any $a > 0$.)
+
+\item Write a few lines of MATLAB code to generate 1000 samples of
+$X$ and $Y$ from the given PDF.
+\end{enumerate}
+
+\item \emph{Conditional densities.}  Suppose that a receiver
+sees a random number $K$ of transmitters.  
+Given $K$, the received signal is,
+\[
+    Y \sim {\mathcal CN}(0, KE_1 + E_0),
+\]
+where $E_0$ is the average received energy when there are no transmitters
+and $E_1$ is the additional average received energy per transmitter. 
+Suppose that $K$ is Poisson distributed with mean $\bar{K}>0$.
+\begin{enumerate}[(a)]
+\item What is $P(|Y| \geq t|K=k)$ as a function of $t$?
+\item What is $P(|Y| \geq t)$ as a function of $t$?
+\item Find $E(|Y|^2)$.
+\end{enumerate}
+
+\item \emph{Random processes.}  
+Let $x[n] \in \{0,1\}$ where $x[n]$ transitions from $0$ to $1$
+with probability $p$ and $1$ to $0$ with probability $q$ in each time step.
+Suppose that $x[n]$ is in the stationary distribution.
+\begin{enumerate}[(a)]
+\item Find the $\mu = \Exp(x[n])$, the stationary mean.
+
+\item Find the $R[m] = \Exp(x[n]x[n-m])$, the autocorrelation function.
+\end{enumerate}
+
+\item \emph{Phase noise.}  Phase noise is a key challenge in receivers,
+particularly at higher frequencies.  One simple model
+for phase noise is as follows:  Phase noise will transform a signal $x(t)$ 
+to a noisy signal $y(t)$ by the relation:
+\[
+    y(t) = x(t)e^{i\theta(t)}, \quad 
+    \theta(t) = \int_{-\infty}^t w(u)du,
+\]
+where $w(u)$ is real-valued WSS Gaussian noise with 
+\[
+    R_w(\tau) = \sigma^2\delta(\tau), \quad 
+    \sigma^2 = 2\pi f_0 10^{-0.1L},
+\]
+where $L$ is the phase noise level in dBc/Hz and $f_0$ is a reference frequency.
+Thus, phase noise acts as time-varying phase rotation on the signal.
+\begin{enumerate}[(a)]
+\item What is the distribution of $\theta(t)-\theta(s)$ as a function of 
+$s,t$ and $\sigma^2$.
+
+\item What is the autocorrelation function $R_v(\tau)$ 
+of the multiplicative noise factor $v(t) = e^{i\theta(t)}$?  You may
+look and use the \emph{characteristic function} of a Gaussian.
+    
+\item Use MATLAB to plot the auto-correlation function $R_v(\tau)$ for a 
+phase noise of $L= - 80$ dBc/Hz at $f_0=$ 10 kHz.  At what time $\tau$
+is $R_v(\tau)=0.5 R_v(0)$?
+
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+\end{document}
+
