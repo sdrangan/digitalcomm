@@ -50,11 +50,11 @@ We will add to this section as the class progresses.
 * Unit 4.  Signal space theory
     * Lecture notes [[pdf]](./Lectures/Unit04_SignalSpace.pdf) [[Powerpoint]](./Lectures/Unit04_SignalSpace.pptx)
     * Problems [[pdf]](./unit04_sig_space/prob_sig_space.pdf) [[Latex]](./unit04_sig_space/prob_sig_space.tex)
-* Unit 5.  Noise and random processes
+* Unit 5.  Random process review
     * Lecture notes [[pdf]](./Lectures/Unit05_RandProc.pdf) [[Powerpoint]](./Lectures/Unit05_RandProc.pptx)
     * Problems [[pdf]](./unit05_rand_process/prob_rand_proc.pdf) [[Latex]](./unit05_rand_process/prob_rand_proc.tex)
-    * MATLAB exercise:  To be added
-* Unit 6.  Symbol demodulation
+    * MATLAB exercise:  [Simulating Rayleigh fading](./unit05_rand_proc/lab_rayleigh_partial.m)
+* Unit 6.  Symbol demodulation and error analysis
 * Unit 7.  Synchronization, match filtering
 * Unit 8.  Equalization
 * Unit 9.  Linear codes
