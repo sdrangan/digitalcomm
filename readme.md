@@ -55,6 +55,9 @@ We will add to this section as the class progresses.
     * Problems [[pdf]](./unit05_rand_process/prob_rand_proc.pdf) [[Latex]](./unit05_rand_process/prob_rand_proc.tex)
     * MATLAB exercise:  [Simulating Rayleigh fading](./unit05_rand_proc/lab_rayleigh_partial.m)
 * Unit 6.  Symbol demodulation and error analysis
+    * Lecture notes [[pdf]](./Lectures/Unit06_Demod.pdf) [[Powerpoint]](./Lectures/Unit06_Demod.pptx)
+    * Problems:  TBA
+    * MATLAB exercise:  [QAM Demodulation](./unit06_demod/lab_qamdemod.m)
 * Unit 7.  Synchronization, match filtering
 * Unit 8.  Equalization
 * Unit 9.  Linear codes
