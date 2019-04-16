@@ -58,7 +58,10 @@ We will add to this section as the class progresses.
     * Lecture notes [[pdf]](./Lectures/Unit06_Demod.pdf) [[Powerpoint]](./Lectures/Unit06_Demod.pptx)
     * Problems [[pdf]](./unit06_demod/prob_demod.pdf) [[Latex]](./unit06_demod/prob_demod.tex)
     * MATLAB exercise:  [QAM Demodulation](./unit06_demod/lab_qamdemod.m)
-* Unit 7.  Synchronization, match filtering
+* Unit 7.  Synchronization and Match Filtering
+    * Lecture notes [[pdf]](./Lectures/Unit07_Sync.pdf) [[Powerpoint]](./Lectures/Unit07_Sync.pptx)
+    * Problems:  To be added
+    * MATLAB exercise:  To be added
 * Unit 8.  Equalization
 * Unit 9.  Linear codes
 * Unit 10.  Convolutional and turbo codes
