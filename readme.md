@@ -60,7 +60,7 @@ We will add to this section as the class progresses.
     * MATLAB exercise:  [QAM Demodulation](./unit06_demod/lab_qamdemod.m)
 * Unit 7.  Synchronization and Match Filtering
     * Lecture notes [[pdf]](./Lectures/Unit07_Sync.pdf) [[Powerpoint]](./Lectures/Unit07_Sync.pptx)
-    * Problems:  To be added
+    * Problems [[pdf]](./unit07_sync/prob_sync.pdf) [[Latex]](./unit07_sync/prob_sync.tex)
     * MATLAB exercise:  To be added
 * Unit 8.  Equalization
 * Unit 9.  Linear codes
