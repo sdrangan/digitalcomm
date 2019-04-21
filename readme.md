@@ -58,10 +58,10 @@ We will add to this section as the class progresses.
     * Lecture notes [[pdf]](./Lectures/Unit06_Demod.pdf) [[Powerpoint]](./Lectures/Unit06_Demod.pptx)
     * Problems [[pdf]](./unit06_demod/prob_demod.pdf) [[Latex]](./unit06_demod/prob_demod.tex)
     * MATLAB exercise:  [QAM Demodulation](./unit06_demod/lab_qamdemod.m)
-* Unit 7.  Synchronization and Match Filtering
+* Unit 7.  Synchronization and match filtering
     * Lecture notes [[pdf]](./Lectures/Unit07_Sync.pdf) [[Powerpoint]](./Lectures/Unit07_Sync.pptx)
     * Problems [[pdf]](./unit07_sync/prob_sync.pdf) [[Latex]](./unit07_sync/prob_sync.tex)
-    * MATLAB exercise:  To be added
+    * MATLAB exercise:  [802.11 packet detection and synchronization](./unit07_sync/lab_wlan_preamble.m)
 * Unit 8.  Equalization
 * Unit 9.  Linear codes
 * Unit 10.  Convolutional and turbo codes
