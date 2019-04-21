@@ -53,11 +53,11 @@ We will add to this section as the class progresses.
 * Unit 5.  Random process review
     * Lecture notes [[pdf]](./Lectures/Unit05_RandProc.pdf) [[Powerpoint]](./Lectures/Unit05_RandProc.pptx)
     * Problems [[pdf]](./unit05_rand_process/prob_rand_proc.pdf) [[Latex]](./unit05_rand_process/prob_rand_proc.tex)
-    * MATLAB exercise:  [Simulating Rayleigh fading](./unit05_rand_proc/lab_rayleigh_partial.m)
+    * MATLAB exercise:  [Simulating Rayleigh fading](./unit05_rand_process/lab_rayleigh_partial.m)
 * Unit 6.  Symbol demodulation and error analysis
     * Lecture notes [[pdf]](./Lectures/Unit06_Demod.pdf) [[Powerpoint]](./Lectures/Unit06_Demod.pptx)
     * Problems [[pdf]](./unit06_demod/prob_demod.pdf) [[Latex]](./unit06_demod/prob_demod.tex)
-    * MATLAB exercise:  [QAM Demodulation](./unit06_demod/lab_qamdemod.m)
+    * MATLAB exercise:  [QAM Demodulation](./unit06_demod/lab_qamdemod_partial.m)
 * Unit 7.  Synchronization and match filtering
     * Lecture notes [[pdf]](./Lectures/Unit07_Sync.pdf) [[Powerpoint]](./Lectures/Unit07_Sync.pptx)
     * Problems [[pdf]](./unit07_sync/prob_sync.pdf) [[Latex]](./unit07_sync/prob_sync.tex)
