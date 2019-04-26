@@ -179,7 +179,7 @@
 \begin{enumerate}
 
 \item \emph{Matched Filter SNR.}
-Suppose we wish to detect a synchronization signal $x_n$, $n=0,1,\ldots,N-1$ from 
+Suppose we wish to detect a synchronization signal $x_n$, $n=0,1,\ldots,N-1$ from
 received complex baseband samples of the form,
 \[
     r_n = hx_n + w_n, \quad w_n \sim {\mathcal CN}(0,N_0),
@@ -203,7 +203,7 @@ describe the limits of integral.
 \end{enumerate}
 
 \item \emph{Matched Filter with Carrier Offset}.
-Similar to the previous problem, consider the MF detector for a 
+Similar to the previous problem, consider the MF detector for a
 signal $x_n$.  However, suppose that there is carrier offset
 so that the received samples are given by,
 \[
@@ -211,8 +211,9 @@ so that the received samples are given by,
     \quad n=0,1,\ldots,N-1,
 \]
 where $h$ is the complex channel gain, $w_n$ is AWGN noise
-and $\theta$ is the phase rotation per sample.  The phase rotation is
-due to carrier offset.  
+and $\theta$ is the phase rotation per sample.
+The phase rotation is due to carrier offset.
+Assume $|x_n|$ is constant (e.g. QPSK).
 \begin{enumerate}[(a)]
 \item Suppose you run the MF detector assuming
 there is no carrier offset (i.e.\ $\theta=0$).  What is the degradation in
@@ -233,13 +234,13 @@ $\xbf$ from RX samples $\rbf = h\xbf + \wbf$, computes a statistic:
     \rho := \frac{|\xbf^*\rbf|^2}{\|\xbf\|^2\|\rbf\|^2}.
 \]
 The statistic $\rho \in [0,1]$ is the fraction of energy in the direction
-of the synchronization signal $\xbf$.  
+of the synchronization signal $\xbf$.
 Assume the signal is length $N$.
 \begin{enumerate}[(a)]
 \item   (This part is bonus).
 Read about the Beta distribution.  Use any facts you can find
 on the Internet or elsewhere to show that when
-$\rbf$ is only white noise (i.e.\ there is no signal), $\rho$ is 
+$\rbf$ is only white noise (i.e.\ there is no signal), $\rho$ is
 distributed as,
 \[
     \rho = 1-U^{1/N},  \quad U \sim \mathrm{Unif}(0,1).
@@ -249,16 +250,16 @@ distributed as,
 Using the result from part (a), find the threshold $t$ as a function
 of $N$ and the false alarm target.
 
-\item Write MATLAB code to run a short simulation to plot the 
+\item Write MATLAB code to run a short simulation to plot the
 missed detection probability as a function of the SNR for $N=128$
 and a false alarm target of $10^{-6}$.  Use any assumptions as necessary.
 \end{enumerate}
 
-\item \emph{Multiple delay hypotheses.} 
+\item \emph{Multiple delay hypotheses.}
 In the 5G NR standard, each base station cell periodically transmits a
 primary synchronization signal (PSS) that the mobile (UE) can detect.
 For 5G mmWave systems, the PSS bandwidth is typically
-15.24~MHz (127 subcarriers at 120~kHz subcarrier spacing).  
+15.24~MHz (127 subcarriers at 120~kHz subcarrier spacing).
 The UE runs a matched filter (MF) to detect the PSS.
 \begin{enumerate}[(a)]
 \item If the MF oversampled by a factor of two, how many delay hypotheses
