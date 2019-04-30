@@ -64,7 +64,7 @@ We will add to this section as the class progresses.
     * MATLAB exercise:  [802.11 packet detection and synchronization](./unit07_sync/lab_wlan_preamble.m)
 * Unit 8.  Equalization
     * Lecture notes [[pdf]](./Lectures/Unit08_Equalization.pdf) [[Powerpoint]](./Lectures/Unit08_Equalization.pptx)
-    * Problems: To be added 
+    * Problems [[pdf]](./unit08_ofdm/prob_ofdm.pdf) [[Latex]](./unit08_ofdm/prob_ofdm.tex)
     * MATLAB exercise:  To be added
 * Unit 9.  Linear codes
 * Unit 10.  Convolutional and turbo codes
