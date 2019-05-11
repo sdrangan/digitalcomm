@@ -199,7 +199,7 @@ and number of occupied subcarriers.
 \item The FFT should be a power of 2.
 \end{enumerate}
 
-\item \emph{Effective SNR.}  Suppose that 
+\item \emph{Effective SNR.}  Suppose that
 \[
     y[n]=hx[n]+w[n], \quad w[n] \sim {\mathcal CN}(0,N_0), \quad |x[n]|^2 = E_x,
 \]
@@ -221,43 +221,43 @@ Assuming $x[n]$ is independent of $w[n]$ what is the $E|v[n]|^2$, the effective 
 \end{enumerate}
 
 
-\item \emph{MSE error with a correlation.}  Suppose that 
+\item \emph{MSE error with a correlation.}  Suppose that
 \[
     y[n]=hx[n]+w[n], \quad w[n] \sim {\mathcal CN}(0,N_0), \quad |x[n]|^2 = 1.
 \]
 To estimate $h[n]$, reference signals are placed once every $N$ sub-carriers
 at locations $n=0,N,2N,\ldots$.
 On the reference signals, we compute the raw estimate:
-$\hat{h}_0[n] = y[n]/x[n]$.  
+$\hat{h}_0[n] = y[n]/x[n]$.
 Suppose that we can model $h[n]$ as a stationary random process with $E(h[n])=0$
 and $E(h[n]h^*[n-m]) = E_0 e^{-\alpha|m|}$ for some constants $E_0$ and $m$.
 \begin{enumerate}[(a)]
   \item Find the MSE of the raw channel estimate $\hat{h}_0[n] = y[n]/x[n]$
   on the sub-carriers $n=0,N,2N,\cdots$.  The MSE is $\Exp|\hat{h}_0[n]-h[n]|^2$.
   \item Suppose that for other sub-carriers, we estimate $\hat[n] = \hat{h}_0[kN]$ where $kN$ is the
-  closest reference sub-carrier to $n$.  Find the MSE of this nearest neighbor estimate $\hat[n]$ 
+  closest reference sub-carrier to $n$.  Find the MSE of this nearest neighbor estimate $\hat[n]$
   as a function of the sub-carrier index $n$.  This will be a periodic function in $n$.
-  \item Suppose that the SNR $E_0/N_0$ is 20~dB and we want that the worst case 
+  \item Suppose that the SNR $E_0/N_0$ is 20~dB and we want that the worst case
   MSE is bounded by:
-  \[   
+  \[
         E|\hat{h}[n] - h[n]|^2 \leq 2N_0,
   \]
-  for all sub-carriers $n$.  That is, we want that the estimation error to be no more than 3dB 
+  for all sub-carriers $n$.  That is, we want that the estimation error to be no more than 3dB
   the MSE on the reference sub-carriers.  What is $N$ in terms of $\alpha$.  That is, how closely
   do we need to place the reference sub-carriers as a function of the rate of variation
   of the random process.
 \end{enumerate}
 
-\item \emph{Bias and Variance with a frequency rotation}.  
-Suppose that true OFDM channel is $h[n] = e^{in\theta}$ where $\theta$ is the 
+\item \emph{Bias and Variance with a frequency rotation}.
+Suppose that true OFDM channel is $h[n] = e^{in\theta}$ where $\theta$ is the
 frequency rotation per sub-carrier.  We get measurements of the form,
 \[
     y[n]=h[n]x[n]+w[n], \quad w[n] \sim {\mathcal CN}(0,N_0), \quad |x[n]|^2 = E_x.
-\] 
+\]
 \begin{enumerate}[(a)]
 \item Find the bias and variance of the raw channel estimate $\hat{h}_0[n] = y[n]/x[n]$.
 
-\item Now consider a raw channel estimate, 
+\item Now consider a raw channel estimate,
 \[
     \hat{h}[n] = \sum_{\ell=-L}^L \hat{h}_0[n].
 \]
@@ -265,7 +265,7 @@ Find the bias and variance as a function of $L$.
 
 \item Suppose that a channel delay $\tau = $ 0.5$\mu$s relative to the beginning of the FFT window,
 and the sub-carrier spacing is $\Delta f$=15 kHz and the SNR $E_x/N_0=10$ dB.  Use MATLAB to plot
-the bias, variance and MSE as a function of the window length $L$.
+the bias squared, variance and MSE as a function of the window length $L$.
 \end{enumerate}
 
 

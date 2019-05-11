@@ -1,7 +1,8 @@
 # Digital Communications
 
 This repository provides instructional material for 
-digital communications.  The material is used for 
+digital communications.  The material is used for:
+
 *EL-GY 6013: Digital Communications*, a graduate level class at NYU Tandon,
 taught by [Sundeep Rangan](http://wireless.engineering.nyu.edu/sundeep-rangan/):
 
@@ -12,8 +13,7 @@ But, please cite the material if you use the material in your own class.
 
 The class assumes graduate probability (stochastic processes) and 
 undergraduate signals and systems.  
-Familiarity with MATLAB or equivalent language is
-preferred.  
+Familiarity with MATLAB or equivalent language is preferred.  
 
 ## Using github 
 All the files in this repository are hosted on [github](https://github.com/).
@@ -65,8 +65,12 @@ We will add to this section as the class progresses.
 * Unit 8.  Equalization
     * Lecture notes [[pdf]](./Lectures/Unit08_Equalization.pdf) [[Powerpoint]](./Lectures/Unit08_Equalization.pptx)
     * Problems [[pdf]](./unit08_ofdm/prob_ofdm.pdf) [[Latex]](./unit08_ofdm/prob_ofdm.tex)
-    * MATLAB exercise:  To be added
+    * MATLAB exercise:  [802.11 OFDM equalization](./unit10_ofdm/lab_ofdm.m)
 * Unit 9.  Linear codes
-* Unit 10.  Convolutional and turbo codes
+* Unit 10.  Convolutional codes
+    * Lecture notes [[pdf]](./Lectures/Unit10_ConvCodes.pdf) [[Powerpoint]](./Lectures/Unit10_ConvCodes.pptx)
+    * Problems:  To be added
+    * MATLAB exercise:  To be added
+* Unit 11.  Information theory
 
 
