@@ -1,10 +1,10 @@
 # Digital Communications
+[Prof. Sundeep Rangan, NYU](http://wireless.engineering.nyu.edu/sundeep-rangan/):
+
 
 This repository provides instructional material for 
-digital communications.  The material is used for:
-
-*EL-GY 6013: Digital Communications*, a graduate level class at NYU Tandon,
-taught by [Sundeep Rangan](http://wireless.engineering.nyu.edu/sundeep-rangan/):
+digital communications.  The material is used for 
+EL-GY 6013: Digital Communications*, a graduate level class at NYU Tandon.
 
 Anyone is free to use and copy this material (at their own risk!).
 But, please cite the material if you use the material in your own class.
@@ -29,17 +29,26 @@ Even better, fork the repository, make the changes yourself and
 and we will try to merge it in.  See the [excellent instructions](https://github.com/ishjain/learnGithub/blob/master/updateMLrepo.md)
 from the former TA Ish Jain.
 
+## SDR Labs
+I am starting to add software-defined radio (SDR) labs.  The labs are based on the
+simple, but powerful [ADALM-Pluto boards](https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/adalm-pluto.html).
+These labs are in a separate [SDR github repo](https://github.com/sdrangan/sdrlab).
+But, I have tried to reference the material in the lecture notes
+and outline.
+
 
 ## Sequence
 We will add to this section as the class progresses.
 
 * Introduction
     * Course Admin [[pdf]](./Lectures/CourseAdmin.pdf) [[Powerpoint]](./Lectures/CourseAdmin.pptx)
+    * [SDR Lab](https://github.com/sdrangan/sdrlab/tree/main/lab01_intro):  Getting started and transmitting and receiving complex baseband samples
 * Unit 1.  Passband modulation
     * Lecture notes [[pdf]](./Lectures/Unit01_Passband.pdf) [[Powerpoint]](./Lectures/Unit01_Passband.pptx)
     * Problems [[pdf]](./unit01_passband/prob_passband.pdf) [[Latex]](./unit01_passband/prob_passband.tex)
     * In-Class exercises:  [[MATLAB]](./unit01_passband/passbandInclass.mlx) [[Soln]](./unit01_passband/passbandInclassSoln.mlx)
     * MATLAB exercise:  [Simulating up- and down-conversion](./unit01_passband/lab_passband_partial.m)
+    * [SDR Lab](https://github.com/sdrangan/sdrlab/tree/main/lab02_freq):  Frequency offset estimation
 * Unit 2.  Symbol mapping and transmit filtering
     * Lecture notes [[pdf]](./Lectures/Unit02_TxFilter.pdf) [[Powerpoint]](./Lectures/Unit02_TxFilter.pptx)
     * Problems [[pdf]](./unit02_tx_filter/prob_tx_filter.pdf) [[Latex]](./unit02_tx_filter/prob_tx_filter.tex)
