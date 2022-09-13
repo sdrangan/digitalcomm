@@ -175,7 +175,19 @@
 
 \begin{enumerate}
 
-\item \emph{Passband conversion.}
+
+\item \emph{Passband conversion in time-domain.}  Suppose that the
+complex baseband signal in time-domain is
+\[
+    u(t) = (a+bj)e^{-\alpha t}, \quad t \geq 0,
+\]
+where $a$, $b$, $\alpha$ are real.
+\begin{enumerate}[(a)]
+  \item What at the I and Q components?
+  \item What is the real passband signal after upconversion with a carrier frequency $f_c$?
+\end{enumerate}
+
+\item \emph{Passband conversion in frequency domain.}
 Let $u(t)$ be a complex baseband signal with the real and imaginary parts of
  the spectrum (Fourier Transform) shown in
 Fig.~\ref{fig:Ubb}.  The constants are $f_0 = $ 5 MHz, $f_1 = $ 10 MHz, $A=8$ and $B=10$.
@@ -299,6 +311,41 @@ Find $f_c$ and a filter magnitude response $|H(f)|^2$ such that:
 There is no single correct answer.  Draw $|H(f)|^2$ and the PSD of $u(t)$.
 \end{enumerate}
 
+
+\begin{figure}
+  \centering
+  \includegraphics[width=10cm]{transceiver_60GHz}
+  \caption{Schematic diagram of a SiGe RF front-end from Floyd, \emph{et.~al}, 2005. }\label{fig:transceiver60}
+\end{figure}
+
+
+\item \emph{FFT bins.}  A RX receives a complex baseband signal $x(t)$ and samples
+$x(t)$ at a sampling rate $f_s=$\,\SI{20}{MHz}.  It then takes an $N$-point FFT
+$X[k]$, $k=0,1,\ldots,N-1$ with $N=1024$.  For each of the following signals $x(t)$, indicate
+which bin $k$ will   $|X[k]|^2$ have the maximum value?
+\begin{enumerate}[(a)]
+  \item $x(t)$ is a complex exponential with frequency $f_0=$\,\SI{4}{MHz}.
+  \item $x(t)$ is a complex exponential with frequency $f_0=$\,\SI{-4}{MHz}.
+  \item A real passband signal is $x_p(t) = A\cos(2\pi ft)$ with $f=$\,\SI{2.002}{GHz}.
+  Then $x(t)$ comes from downconverting $x_p(t)$ with carrier $f_c=$\,\SI{2}{GHz}.
+  \item $x(t)$ comes from downconverting $x_p(t)$ as in part (c).  But, the
+  carrier frequency $f_c$ is nominally \SI{2}{GHz}, but with an error of \SI{+10}{ppm}
+  too high.
+\end{enumerate}
+
+
+\item \emph{Circuit implementations.}  Fig.~\ref{fig:transceiver60} shows the circuit schematic
+of the RF front-end a SiGe (silicon Germanium) bipolar transceiver presented in:
+\begin{quote}
+Floyd, Brian A., et al. "SiGe bipolar transceiver circuits operating at 60 GHz." \emph{IEEE journal of solid-state circuits} 40.1 (2005): 156-167.
+\end{quote}
+Feel free to look up terms in the paper or any other source to answer the following questions:
+\begin{enumerate}
+\item Which block is the local oscillator?
+\item What is the carrier frequency?  Why?
+\item What is the role of the "Differential branch line directional coupler"?
+\item How is the frequency tuned?
+\end{enumerate}
 
 \end{enumerate}
 
