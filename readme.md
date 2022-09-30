@@ -56,7 +56,7 @@ We will add to this section as the class progresses.
 * Unit 3.  Receive filtering 
     * Lecture notes [[pdf]](./Lectures/Unit03_RxFilter.pdf) [[Powerpoint]](./Lectures/Unit03_RxFilter.pptx)
     * Problems [[pdf]](./unit03_rx_filter/prob_rx_filter.pdf) [[Latex]](./unit03_rx_filter/prob_rx_filter.tex)
-    * MATLAB exercise:  [Building a 5G channel sounder](./unit03_rx_filter/lab_chan_sounder_partial.m)
+    * MATLAB exercise:  [Building a 5G channel sounder](./unit03_rx_filter/labChanSounder.mlx)
 * Unit 4.  Signal space theory
     * Lecture notes [[pdf]](./Lectures/Unit04_SignalSpace.pdf) [[Powerpoint]](./Lectures/Unit04_SignalSpace.pptx)
     * Problems [[pdf]](./unit04_sig_space/prob_sig_space.pdf) [[Latex]](./unit04_sig_space/prob_sig_space.tex)
