@@ -53,10 +53,12 @@ We will add to this section as the class progresses.
     * Lecture notes [[pdf]](./Lectures/Unit02_TxFilter.pdf) [[Powerpoint]](./Lectures/Unit02_TxFilter.pptx)
     * Problems [[pdf]](./unit02_tx_filter/prob_tx_filter.pdf) [[Latex]](./unit02_tx_filter/prob_tx_filter.tex)
     * MATLAB exercise:  [802.11ad TX Filter design](./unit02_tx_filter/labTxFilt.mlx)  
+    * [SDR Lab](https://github.com/sdrangan/sdrlab/tree/main/lab03_symmod):  Symbol Mapping and TX Filtering
 * Unit 3.  Receive filtering 
     * Lecture notes [[pdf]](./Lectures/Unit03_RxFilter.pdf) [[Powerpoint]](./Lectures/Unit03_RxFilter.pptx)
     * Problems [[pdf]](./unit03_rx_filter/prob_rx_filter.pdf) [[Latex]](./unit03_rx_filter/prob_rx_filter.tex)
     * MATLAB exercise:  [Building a 5G channel sounder](./unit03_rx_filter/labChanSounder.mlx)
+    * [SDR Lab](https://github.com/sdrangan/sdrlab/tree/main/lab04_chansounder):  Building a channel sounder
 * Unit 4.  Signal space theory
     * Lecture notes [[pdf]](./Lectures/Unit04_SignalSpace.pdf) [[Powerpoint]](./Lectures/Unit04_SignalSpace.pptx)
     * Problems [[pdf]](./unit04_sig_space/prob_sig_space.pdf) [[Latex]](./unit04_sig_space/prob_sig_space.tex)
