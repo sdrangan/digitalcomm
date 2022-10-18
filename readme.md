@@ -55,7 +55,7 @@ We will add to this section as the class progresses.
     * Problems [[pdf]](./unit02_tx_filter/prob_tx_filter.pdf) [[Latex]](./unit02_tx_filter/prob_tx_filter.tex)
     * MATLAB exercise:  [802.11ad TX Filter design](./unit02_tx_filter/labTxFilt.mlx)  
     * [SDR Lab](https://github.com/sdrangan/sdrlab/tree/main/lab03_symmod):  Symbol Mapping and TX Filtering
-* Unit 3.  Receive filtering 
+* Unit 3.  Receive filtering    
     * Lecture notes [[pdf]](./Lectures/Unit03_RxFilter.pdf) [[Powerpoint]](./Lectures/Unit03_RxFilter.pptx)
     * In-Class exercises:  [[Matlab]](./unit03_rx_filter/rxFiltInClass.mlx) [[Soln]](./unit03_rx_filter/rxFiltInClassSoln.mlx)
     * Problems [[pdf]](./unit03_rx_filter/prob_rx_filter.pdf) [[Latex]](./unit03_rx_filter/prob_rx_filter.tex)
@@ -70,7 +70,7 @@ We will add to this section as the class progresses.
     * MATLAB exercise:  [Simulating Rayleigh fading](./unit05_rand_process/lab_rayleigh_partial.m)
 * Unit 6.  Symbol demodulation and error analysis
     * Lecture notes [[pdf]](./Lectures/Unit06_Demod.pdf) [[Powerpoint]](./Lectures/Unit06_Demod.pptx)
-    * In-Class exercises:  [[Matlab]](./unit06_demod/demodInclass.mlx) [[Soln]](./unit06_demod/demodInclassSoln.mlx)
+    * In-Class exercises:  [[Matlab]](./unit06_demod/demodInClass.mlx) [[Soln]](./unit06_demod/demodInClassSoln.mlx)
     * Problems [[pdf]](./unit06_demod/prob_demod.pdf) [[Latex]](./unit06_demod/prob_demod.tex)
     * MATLAB exercise:  [QAM Demodulation](./unit06_demod/lab_qamdemod_partial.m)
 * Unit 7.  Synchronization and match filtering
