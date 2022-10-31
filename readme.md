@@ -72,7 +72,7 @@ We will add to this section as the class progresses.
     * Lecture notes [[pdf]](./Lectures/Unit06_Demod.pdf) [[Powerpoint]](./Lectures/Unit06_Demod.pptx)
     * In-Class exercises:  [[Matlab]](./unit06_demod/demodInClass.mlx) [[Soln]](./unit06_demod/demodInClassSoln.mlx)
     * Problems [[pdf]](./unit06_demod/prob_demod.pdf) [[Latex]](./unit06_demod/prob_demod.tex)
-    * MATLAB exercise:  [QAM Demodulation](./unit06_demod/lab_qamdemod_partial.m)
+    * MATLAB exercise:  [QAM Demodulation](./unit06_demod/labQamdemod.m)
 * Unit 7.  Synchronization and match filtering
     * Lecture notes [[pdf]](./Lectures/Unit07_Sync.pdf) [[Powerpoint]](./Lectures/Unit07_Sync.pptx)
     * Problems [[pdf]](./unit07_sync/prob_sync.pdf) [[Latex]](./unit07_sync/prob_sync.tex)
