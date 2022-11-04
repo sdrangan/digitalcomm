@@ -68,6 +68,7 @@ We will add to this section as the class progresses.
     * Lecture notes [[pdf]](./Lectures/Unit05_RandProc.pdf) [[Powerpoint]](./Lectures/Unit05_RandProc.pptx)
     * Problems [[pdf]](./unit05_rand_process/prob_rand_proc.pdf) [[Latex]](./unit05_rand_process/prob_rand_proc.tex)
     * MATLAB exercise:  [Simulating Rayleigh fading](./unit05_rand_process/lab_rayleigh_partial.m)
+    * [SDR Lab](https://github.com/sdrangan/sdrlab/tree/main/lab05_gain):  Gain control and building a simple AGC.
 * Unit 6.  Symbol demodulation and error analysis
     * Lecture notes [[pdf]](./Lectures/Unit06_Demod.pdf) [[Powerpoint]](./Lectures/Unit06_Demod.pptx)
     * In-Class exercises:  [[Matlab]](./unit06_demod/demodInClass.mlx) [[Soln]](./unit06_demod/demodInClassSoln.mlx)
