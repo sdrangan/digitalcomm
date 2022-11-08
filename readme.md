@@ -68,16 +68,18 @@ We will add to this section as the class progresses.
     * Lecture notes [[pdf]](./Lectures/Unit05_RandProc.pdf) [[Powerpoint]](./Lectures/Unit05_RandProc.pptx)
     * Problems [[pdf]](./unit05_rand_process/prob_rand_proc.pdf) [[Latex]](./unit05_rand_process/prob_rand_proc.tex)
     * MATLAB exercise:  [Simulating Rayleigh fading](./unit05_rand_process/lab_rayleigh_partial.m)
-    * [SDR Lab](https://github.com/sdrangan/sdrlab/tree/main/lab05_gain):  Gain control and building a simple AGC.
 * Unit 6.  Symbol demodulation and error analysis
     * Lecture notes [[pdf]](./Lectures/Unit06_Demod.pdf) [[Powerpoint]](./Lectures/Unit06_Demod.pptx)
     * In-Class exercises:  [[Matlab]](./unit06_demod/demodInClass.mlx) [[Soln]](./unit06_demod/demodInClassSoln.mlx)
     * Problems [[pdf]](./unit06_demod/prob_demod.pdf) [[Latex]](./unit06_demod/prob_demod.tex)
-    * MATLAB exercise:  [QAM Demodulation](./unit06_demod/labQamdemod.m)
+    * MATLAB exercise:  [QAM Demodulation](./unit06_demod/labQamdemod.m)    
 * Unit 7.  Synchronization and match filtering
     * Lecture notes [[pdf]](./Lectures/Unit07_Sync.pdf) [[Powerpoint]](./Lectures/Unit07_Sync.pptx)
+    * In-Class exercises:  [[Matlab]](./unit07_sync/syncInClass.mlx) [[Soln]](./unit07_sync/syncInClassSoln.mlx)
     * Problems [[pdf]](./unit07_sync/prob_sync.pdf) [[Latex]](./unit07_sync/prob_sync.tex)
     * MATLAB exercise:  [802.11 packet detection and synchronization](./unit07_sync/lab_wlan_preamble.m)
+    * In-Class exercises:  [[Matlab]](./unit06_demod/demodInClass.mlx) [[Soln]](./unit06_demod/demodInClassSoln.mlx)
+    * [SDR Lab](https://github.com/sdrangan/sdrlab/tree/main/lab05_gain):  Gain control and building a simple AGC.
 * Unit 8.  Equalization
     * Lecture notes [[pdf]](./Lectures/Unit08_Equalization.pdf) [[Powerpoint]](./Lectures/Unit08_Equalization.pptx)
     * Problems [[pdf]](./unit08_ofdm/prob_ofdm.pdf) [[Latex]](./unit08_ofdm/prob_ofdm.tex)
