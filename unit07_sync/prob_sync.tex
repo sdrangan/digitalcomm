@@ -12,8 +12,12 @@
 \usepackage{tikz}
 \usepackage{enumerate}
 \usepackage[outercaption]{sidecap}
+\usepackage{mcode}
 \usetikzlibrary{shapes,arrows}
-%\usetikzlibrary{dsp,chains}
+\usepackage{mdframed}
+\usepackage{siunitx}
+\usepackage{mathtools}
+\usetikzlibrary{patterns}
 
 %\restylefloat{figure}
 %\theoremstyle{plain}      \newtheorem{theorem}{Theorem}
@@ -32,12 +36,16 @@
 \def\binomial{\mathop{\mathrm{binomial}}}
 \def\half{{\ts\frac{1}{2}}}
 \def\Half{{\frac{1}{2}}}
+\def\Norm{{\mathcal{N}}}
+\def\CNorm{{\mathcal{CN}}}
 \def\N{{\mathbb{N}}}
 \def\Z{{\mathbb{Z}}}
 \def\Q{{\mathbb{Q}}}
 \def\F{{\mathbb{F}}}
 \def\R{{\mathbb{R}}}
 \def\C{{\mathbb{C}}}
+\def\Prob{{\mathbb{P}}}
+\def\Exp{{\mathbb{E}}}
 \def\argmin{\mathop{\mathrm{arg\,min}}}
 \def\argmax{\mathop{\mathrm{arg\,max}}}
 %\def\span{\mathop{\mathrm{span}}}
@@ -46,7 +54,6 @@
 \def\limn{\lim_{n \rightarrow \infty}}
 \def\liminfn{\liminf_{n \rightarrow \infty}}
 \def\limsupn{\limsup_{n \rightarrow \infty}}
-\def\GV{Guo and Verd{\'u}}
 \def\MID{\,|\,}
 \def\MIDD{\,;\,}
 
@@ -60,6 +67,8 @@
 \def\qed{\mbox{} \hfill $\Box$}
 \setlength{\unitlength}{1mm}
 
+\def\sqrtmw{\sqrt{\mathrm{mW}}}
+\def\sqrtmJ{\sqrt{\mathrm{mJ}}}
 \def\bhat{\widehat{b}}
 \def\ehat{\widehat{e}}
 \def\phat{\widehat{p}}
@@ -87,59 +96,61 @@
 
 \def\Xset{{\cal X}}
 
-\newcommand{\one}{\mathbf{1}}
-\newcommand{\abf}{\mathbf{a}}
-\newcommand{\bbf}{\mathbf{b}}
-\newcommand{\dbf}{\mathbf{d}}
-\newcommand{\ebf}{\mathbf{e}}
-\newcommand{\gbf}{\mathbf{g}}
-\newcommand{\hbf}{\mathbf{h}}
-\newcommand{\pbf}{\mathbf{p}}
-\newcommand{\pbfhat}{\widehat{\mathbf{p}}}
-\newcommand{\qbf}{\mathbf{q}}
-\newcommand{\qbfhat}{\widehat{\mathbf{q}}}
-\newcommand{\rbf}{\mathbf{r}}
-\newcommand{\rbfhat}{\widehat{\mathbf{r}}}
-\newcommand{\sbf}{\mathbf{s}}
-\newcommand{\sbfhat}{\widehat{\mathbf{s}}}
-\newcommand{\ubf}{\mathbf{u}}
-\newcommand{\ubfhat}{\widehat{\mathbf{u}}}
-\newcommand{\utildebf}{\tilde{\mathbf{u}}}
-\newcommand{\vbf}{\mathbf{v}}
-\newcommand{\vbfhat}{\widehat{\mathbf{v}}}
-\newcommand{\wbf}{\mathbf{w}}
-\newcommand{\wbfhat}{\widehat{\mathbf{w}}}
-\newcommand{\xbf}{\mathbf{x}}
-\newcommand{\xbfhat}{\widehat{\mathbf{x}}}
-\newcommand{\xbfbar}{\overline{\mathbf{x}}}
-\newcommand{\ybf}{\mathbf{y}}
-\newcommand{\zbf}{\mathbf{z}}
-\newcommand{\zbfbar}{\overline{\mathbf{z}}}
-\newcommand{\zbfhat}{\widehat{\mathbf{z}}}
+\newcommand{\mb}[1]{\boldsymbol{#1}}
+\newcommand{\wh}[1]{\widehat{#1}}
+\newcommand{\one}{\boldsymbol{1}}
+\newcommand{\abf}{\boldsymbol{a}}
+\newcommand{\bbf}{\boldsymbol{b}}
+\newcommand{\dbf}{\boldsymbol{d}}
+\newcommand{\ebf}{\boldsymbol{e}}
+\newcommand{\gbf}{\boldsymbol{g}}
+\newcommand{\hbf}{\boldsymbol{h}}
+\newcommand{\pbf}{\boldsymbol{p}}
+\newcommand{\pbfhat}{\widehat{\boldsymbol{p}}}
+\newcommand{\qbf}{\boldsymbol{q}}
+\newcommand{\qbfhat}{\widehat{\boldsymbol{q}}}
+\newcommand{\rbf}{\boldsymbol{r}}
+\newcommand{\rbfhat}{\widehat{\boldsymbol{r}}}
+\newcommand{\sbf}{\boldsymbol{s}}
+\newcommand{\sbfhat}{\widehat{\boldsymbol{s}}}
+\newcommand{\ubf}{\boldsymbol{u}}
+\newcommand{\ubfhat}{\widehat{\boldsymbol{u}}}
+\newcommand{\utildebf}{\tilde{\boldsymbol{u}}}
+\newcommand{\vbf}{\boldsymbol{v}}
+\newcommand{\vbfhat}{\widehat{\boldsymbol{v}}}
+\newcommand{\wbf}{\boldsymbol{w}}
+\newcommand{\wbfhat}{\widehat{\boldsymbol{w}}}
+\newcommand{\xbf}{\boldsymbol{x}}
+\newcommand{\xbfhat}{\widehat{\boldsymbol{x}}}
+\newcommand{\xbfbar}{\overline{\boldsymbol{x}}}
+\newcommand{\ybf}{\boldsymbol{y}}
+\newcommand{\zbf}{\boldsymbol{z}}
+\newcommand{\zbfbar}{\overline{\boldsymbol{z}}}
+\newcommand{\zbfhat}{\widehat{\boldsymbol{z}}}
 \newcommand{\Ahat}{\widehat{A}}
-\newcommand{\Abf}{\mathbf{A}}
-\newcommand{\Bbf}{\mathbf{B}}
-\newcommand{\Cbf}{\mathbf{C}}
-\newcommand{\Bbfhat}{\widehat{\mathbf{B}}}
-\newcommand{\Dbf}{\mathbf{D}}
-\newcommand{\Gbf}{\mathbf{G}}
-\newcommand{\Hbf}{\mathbf{H}}
-\newcommand{\Kbf}{\mathbf{K}}
-\newcommand{\Pbf}{\mathbf{P}}
+\newcommand{\Abf}{\boldsymbol{A}}
+\newcommand{\Bbf}{\boldsymbol{B}}
+\newcommand{\Cbf}{\boldsymbol{C}}
+\newcommand{\Bbfhat}{\widehat{\boldsymbol{B}}}
+\newcommand{\Dbf}{\boldsymbol{D}}
+\newcommand{\Gbf}{\boldsymbol{G}}
+\newcommand{\Hbf}{\boldsymbol{H}}
+\newcommand{\Kbf}{\boldsymbol{K}}
+\newcommand{\Pbf}{\boldsymbol{P}}
 \newcommand{\Phat}{\widehat{P}}
-\newcommand{\Qbf}{\mathbf{Q}}
-\newcommand{\Rbf}{\mathbf{R}}
+\newcommand{\Qbf}{\boldsymbol{Q}}
+\newcommand{\Rbf}{\boldsymbol{R}}
 \newcommand{\Rhat}{\widehat{R}}
-\newcommand{\Sbf}{\mathbf{S}}
-\newcommand{\Ubf}{\mathbf{U}}
-\newcommand{\Vbf}{\mathbf{V}}
-\newcommand{\Wbf}{\mathbf{W}}
+\newcommand{\Sbf}{\boldsymbol{S}}
+\newcommand{\Ubf}{\boldsymbol{U}}
+\newcommand{\Vbf}{\boldsymbol{V}}
+\newcommand{\Wbf}{\boldsymbol{W}}
 \newcommand{\Xhat}{\widehat{X}}
-\newcommand{\Xbf}{\mathbf{X}}
-\newcommand{\Ybf}{\mathbf{Y}}
-\newcommand{\Zbf}{\mathbf{Z}}
+\newcommand{\Xbf}{\boldsymbol{X}}
+\newcommand{\Ybf}{\boldsymbol{Y}}
+\newcommand{\Zbf}{\boldsymbol{Z}}
 \newcommand{\Zhat}{\widehat{Z}}
-\newcommand{\Zbfhat}{\widehat{\mathbf{Z}}}
+\newcommand{\Zbfhat}{\widehat{\boldsymbol{Z}}}
 \def\alphabf{{\boldsymbol \alpha}}
 \def\betabf{{\boldsymbol \beta}}
 \def\mubf{{\boldsymbol \mu}}
@@ -168,6 +179,13 @@
 
 
 
+% Solution environment
+\definecolor{lightgray}{gray}{0.95}
+\newmdenv[linecolor=white,backgroundcolor=lightgray,frametitle=Solution:]{solution}
+
+
+
+
 \begin{document}
 
 \title{Problems:  Synchronization and Detection}
@@ -178,7 +196,129 @@
 
 \begin{enumerate}
 
-\item \emph{Matched Filter SNR.}
+\item \label{prob:hyp} \emph{Hypothesis Testing:}  Suppose that we wish to detect a binary variable $u=0,1$ from 
+an observation $y$ with conditional probabilities:
+\[
+    p(y|u=0) = \begin{cases} 
+        1/2 & \mbox{if } |y| \leq 1, \\
+        0   & \mbox{else}
+        \end{cases},
+    \quad
+    p(y|u=1) = \begin{cases}
+        3y^2/2 & \mbox{if } |y| \leq 1, \\
+        0   & \mbox{else}
+        \end{cases}.        
+\]
+\begin{enumerate}[(a)]
+\item Draw $p(y|u=0)$ and $p(y|u=1)$.
+\item Find an expression for $\wh{u}$, the ML detector for $u$ from $y$.
+\item Find the probability of false alarm $P_{\rm FA} = \Prob(\wh{u}=1|u=0)$.
+\item Find the probability of missed detection $P_{\rm MD} = \Prob(\wh{u}=0|u=1)$.
+\end{enumerate}
+
+
+\item \emph{Simple Match Filter.}  Suppose the target sequence is $\xbf=[1,0,1]^\intercal$,
+and we are given two RX vectors:
+\[
+    \rbf^{(1)}=[2,0,2]^\intercal, \quad 
+    \rbf^{(2)}=[3,-2,3]^\intercal.
+\]
+\begin{enumerate}[(a)]
+\item Find the un-normalized MF $z = \xbf^*\rbf$ 
+for both RX vectors $\rbf = \rbf^{(i)}$.  Which RX signal results in a higher $|z|$?
+
+\item Find the squared correlation coefficient $\rho^2 = |\xbf^*\rbf|^2/\|\xbf\|^2\|\rbf\|^2$
+for both RX vectors.  Which RX signal results in a higher $\rho^2$? 
+
+\end{enumerate}
+
+
+
+\item \emph{Matched Filter SNR}.  A RX signal is received at $P_{\rm rx}=-110$\,\si{dBm} and the noise PSD 
+(including noise figure) is $N_0=-170$\,\si{dBm/Hz}.  
+\begin{enumerate}[(a)]
+\item What is the integration time needed to obtain an SNR of \SI{20}{dB}?
+\item If the sample rate is $f=$\,\SI{100}{MHz}, how many samples should the receiver use?
+\end{enumerate}
+
+
+
+\item \emph{Matched Filter with Convolution}.  
+We are given an RX sequence $\rbf$ and target sequence $\xbf$:
+\[
+    \rbf = [r_0,\ldots,r_5] = [0,2,-2,3,1,1], \quad \xbf = [x_0,x_1]=[1,-1].
+\]
+You can compute the following with MATLAB:
+\begin{enumerate}[(a)]
+\item Find unnormalized MF output
+\[
+    z_k = \sum_{n=0}^{N-1} x_n^*r_{n+k}, \quad k=0,1,\ldots,N-M-1,
+\]
+where $N$ and $M$ are the lengths of $\xbf$ and $\rbf$, respectively.
+\item Find the squared correlation coefficient:
+\[
+    \rho_k^2 = \frac{|r_k|^2}{\|\xbf\|^2E_k}, \quad E_k = \sum_{n=0}^{N-1} |r_{n+k}|^2.
+\]
+
+\item We believe that
+\[
+    r_n = hx_{n-k} + w_n,
+\]
+for some noise $w_n$, channel gain $h$ and delay $k$. 
+Using the normalized MF output, what is the best estimate for the delay $k$?
+\end{enumerate}
+
+\item \label{prob:mf_rect} \emph{MF with a Rectangle.}
+Suppose that we have a target signal
+\[
+    x(t) = \mathrm{Rect}(t/a), \quad a = 2\mbox{ ms},
+\]
+in an RX signal $r(t)$.  We compute the normalized MF:
+\begin{equation} \label{eq:zmf_simp}
+    z(t) = \frac{1}{\|x\|} \int x^*(s)r(t+s)ds.
+\end{equation}
+\begin{enumerate}[(a)]
+\item What are the limits of the integral  in \eqref{eq:zmf_simp}?
+\item Suppose that $r(t)$ is
+\[
+    r(t) = c x(t-\tau),
+\]
+where $c = 2~\sqrtmw$ and $\tau=3$\,\si{ms}.  Draw $z(t)$.  Label the axes.
+What are the units of $z(t)$?
+
+\end{enumerate}
+
+
+\item \label{prob:mf_int}
+\emph{MF with an Interfering Signal.}  As in the previous problem, 
+suppose the target signal is 
+\[
+    x(t) = \mathrm{Rect}(t/a), \quad a = 1\mbox{ ms}.
+\]
+The received signal is
+\[
+    r(t) = c_1 x(t-\tau_1) + c_2 w(t-\tau_2),
+\]
+where $w(t)$ is an interfering signal in a triangular shape:
+\[
+    w(t) = \max\{1 - |t|/a, 0\}.
+\]
+Assume $c_1=1~\sqrtmw$, $c_2=3~\sqrtmw$, $a=1$\,\si{ms}, $\tau_1=1$\,\si{ms} and $\tau_2=3$\,\si{ms}.
+\begin{enumerate}[(a)]
+\item Draw $r(t)$.  Label the axes.
+
+\item Let $z(t)$ be the normalized MF:  $z(t)=\frac{1}{\|x\|} \int x^*(s)r(t+s)\,ds$.  Compute
+$z(t)$ for $t=1$\,\si{ms} and $t=3$\,\si{ms}.
+
+\item Let $\rho^2(t)$ be the squared correlation,
+\[
+    \rho^2(t) = \frac{|z(t)|^2}{E_r(t)}, \quad E_r(t) = \int_{-a/2}^{a/2} |r(t+s)|^2\,ds.
+\]
+Find $\rho^2(t)$ for $t=1$\,\si{ms} and $t=3$\,\si{ms}.
+\end{enumerate}
+
+
+\item \label{prob:mfdist} \emph{Matched Filter Distribution}:
 Suppose we wish to detect a synchronization signal $x_n$, $n=0,1,\ldots,N-1$ from
 received complex baseband samples of the form,
 \[
@@ -186,74 +326,189 @@ received complex baseband samples of the form,
     \quad n=0,1,\ldots,N-1,
 \]
 where $h$ is the complex channel gain and $w_n$ is AWGN noise.
+We use a matched filter (without normalization):
+\[
+    z = \xbf^*\rbf = \sum_{n=1}^N x_n^*r_n.
+\]
+For a given $h$ and $\xbf$:
 \begin{enumerate}[(a)]
-\item Describe the matched filter detector for the signal.
-You need only describe the MF \emph{without} normalization by $\|\rbf\|^2$.
-\item What is the SNR of the detector output as a function of $h$,
+\item Show $z$ is a complex Gaussian.
+\item Find the mean and variance of $z$.
+\item Find the SNR in $z$ as a function of $h$,
 $x_n$ and $N_0$?
-\item Suppose the signal is received at -100 dBm and the noise
-power density (including the noise figure) is -170 dBm/Hz.
-How long should the signal be transmitted such that the SNR of the MF
-detector is 20 dB?
-\item Write an expression for the probability of missed detection
-as a function of the matched filter threshold and the SNR.
-Your expression will be a double integral (an integral over the complex
-plane).  You do not need to solve the integral.  But, you need to precisely
-describe the limits of integral.
 \end{enumerate}
 
+\item \label{prob:pmd} \emph{Matched Filter Probability of Missed Detection}:
+In this problem, we will show how to write an expression for
+the misdetection probability for a MF.
+If you did the calculations correctly in the previous problem correctly, you should
+have found that the MF output is:
+\begin{equation} \label{eq:zmf}
+    z = h\|\xbf\|^2 + v, \quad v = \CNorm(0, \sigma^2), \quad \sigma^2 = \|\xbf\|^2N_0.
+\end{equation}
+Suppose we detect a signal when
+\[
+    |z| > t
+\]
+for some threshold $t$.  Then, the probability of misdetection is
+\[
+    P_{\rm MD} = \Prob(|z| \leq t).
+\]
+We will compute this probability for a given $h$ and $\xbf$.
+\begin{enumerate}[(a)]
+\item Let $h = |h|e^{i\theta}$ where $\theta$ is the angle of $h$.  Write
+\begin{equation} \label{eq:wdefdist}
+    w = \frac{e^{-i\theta}}{\sigma} v.
+\end{equation}
+Show $w \sim \CNorm(0,1)$.
+
+\item Show that the missed detection event $|z| \leq t$ occurs if and only if:
+\begin{equation} \label{eq:zwmd}
+    |z|\leq t \Longleftrightarrow  \left| \sqrt{\gamma} + w \right| < \alpha,
+\end{equation}
+where $\gamma$ is the SNR and $\alpha$ is the normalized threshold:
+\begin{equation} \label{eq:gamalpha}
+    \gamma = \frac{ |h|^2 \|\xbf\|^2}{N_0}, \quad
+    \alpha = \frac{t}{\sigma}.
+\end{equation}
+
+\item Write $w = a+ib$ for real $a$ and $b$.  Write the event \eqref{eq:zwmd}
+as $(a,b) \in M$ for some region $M$.
+You should get that  region $M$ is a circle whose center and radius can be written
+in terms of $\gamma$ and $\alpha$.
+
+
+\item We can write the
+\[
+    P_{\rm MD} = \Prob((a,b) \in M).
+\]
+Using the fact that $a,b$ are independent Gaussians, find a function $\phi(a)$
+and limits $a_{\rm min}$, $a_{\rm max}$ such that
+\begin{equation} \label{eq:pmd_cond_cases}
+    \Prob( (a,b) \in M | a) = \begin{cases}
+        1-2Q(\phi(a)) & \mbox{if } a \in [a_{\rm min}, a_{\rm max}], \\
+        0 & \mbox{else}
+        \end{cases}
+\end{equation}
+The function $\phi(a)$ and limits $a_{\rm min}$, $a_{\rm max}$
+will depend on $a$, $\gamma$ and $\alpha$.
+
+\item Find an expression for $P_{\rm MD}$ by integrating the $\Prob((a,b) \in M | a)$ over $a$.
+You do not need to solve this integral.  But, you should state the limits correctly.
+\end{enumerate}
+
+
 \item \emph{Matched Filter with Carrier Offset}.
-Similar to the previous problem, consider the MF detector for a
-signal $x_n$.  However, suppose that there is carrier offset
-so that the received samples are given by,
+Suppose $x_n$ is a target signal and $r_n$ is the received signal
 \[
     r_n = he^{in\theta}x_n + w_n, \quad w_n \sim {\mathcal CN}(0,N_0),
     \quad n=0,1,\ldots,N-1,
 \]
 where $h$ is the complex channel gain, $w_n$ is AWGN noise
-and $\theta$ is the phase rotation per sample.
+and $\theta$ is unknown phase rotation per sample.
 The phase rotation is due to carrier offset.
-Assume $|x_n|$ is constant (e.g. QPSK).
+Assume $|x_n|=E_x$ for all $n$ and some $E_x$.  We run the un-normalized MF:
+\[
+    z = \sum_{n=0}^{N-1} x_n^*r_n.
+\]
 \begin{enumerate}[(a)]
-\item Suppose you run the MF detector assuming
-there is no carrier offset (i.e.\ $\theta=0$).  What is the degradation in
-SNR as a function of $\theta$ and $N$.
+\item What is the SNR, $\gamma(\theta)$, as a function of the carrier offset $\theta$?
 
-\item Suppose the carrier frequency is 2.5 GHz,  the oscillator error is
-10 ppm.  What is the maximum duration of the transmitted signal up to which
-the SNR is degrated by at most 3~dB.
+\item What is the degradation in
+SNR, meaning the ratio, $\frac{\gamma(\theta)}{\gamma(0)}$,
+as a function of $\theta$ and $N$?
 
-\item If the carrier offset were known, how would you modify the MF
-detector?
+\item Suppose the carrier frequency is \SI{2.5}{GHz},  the oscillator error is
+\SI{10}{ppm}, the sample rate is $f_s = 20$\, \si{MHz}, and we sample for $T=10~\mu s$.  
+What is the degradation in SNR in dB?
+
+\item If the carrier offset were known, how would you modify the MF detector?
 \end{enumerate}
 
-\item \emph{Normalized MF.}  We saw in class that the normalized MF
-for detecting a vector
-$\xbf$ from RX samples $\rbf = h\xbf + \wbf$, computes a statistic:
+\item \emph{FA for the Correlation Detector.}  Consider the correlation
+squared:
 \[
-    \rho := \frac{|\xbf^*\rbf|^2}{\|\xbf\|^2\|\rbf\|^2}.
+    \rho^2 := \frac{|\xbf^*\rbf|^2}{\|\xbf\|^2\|\rbf\|^2} \in [0,1],
 \]
-The statistic $\rho \in [0,1]$ is the fraction of energy in the direction
-of the synchronization signal $\xbf$.
-Assume the signal is length $N$.
+which is the fraction of energy in the target direction $\xbf$ 
+of a RX signal $\rbf$.  Assume the signals are length $N$.
+In this problem, we will show how to compute the FA probability
+when $\rbf$ is just noise meaning $\rbf \sim \CNorm(0,N_0 \mb{I})$
+for some variance $N_0$.
 \begin{enumerate}[(a)]
-\item   (This part is bonus).
-Read about the Beta distribution.  Use any facts you can find
-on the Internet or elsewhere to show that when
-$\rbf$ is only white noise (i.e.\ there is no signal), $\rho$ is
-distributed as,
+\item Let $\ubf_1,\ldots,\ubf_N$ be any orthonormal basis of $\C^N$ where
+the first basis vector is 
+$\ubf_1 = \xbf/\|\xbf\|$ and the other vectors are orthogonal to $\ubf_1$.
+Write $\rbf$ in the basis:
 \[
-    \rho = 1-U^{1/N},  \quad U \sim \mathrm{Unif}(0,1).
+    \rbf = \sum_{n=1}^N v_n \ubf_n, \quad v_n = \ubf_n^*\rbf.
+\]
+Show that
+\[
+    \rho^2 = \frac{|v_1|^2}{\sum_n |v_n|^2}.
+\]
+\item Show that if $\rbf \sim \CNorm(0,N_0\mb{I})$ then $\vbf \sim \CNorm(0,N_0\mb{I})$,
+meaning that the coefficients $v_n$ are i.i.d.~$\CNorm(0,N_0)$.
+
+\item Read about the chi-squared distribution.  Let $A$ and $B$ be
+\[
+    A = \frac{2}{N_0}|v_1|^2, \quad B =  \frac{2}{N_0}\sum_{n=2}^N |v_n|^2.
+\]
+Use any results from the Internet to show that $A \sim \chi(2)$ and $B \sim \chi(2(N-1))$,
+where $\chi(m)$ is the Chi-squared distribution with $m$ degrees of freedom.
+
+\item   Read about the Beta distribution.  Use any facts you can find
+on the Internet or elsewhere to show that
+\[
+    \rho^2 \sim \mathrm{Beta}(1,N-1).
 \]
 
-\item Suppose the MF detects the signal when $\rho > t$.
-Using the result from part (a), find the threshold $t$ as a function
-of $N$ and the false alarm target.
+
+\item Show that when
+$\rbf$ is AWGN noise (i.e.\ there is no signal), $\rho^2$ is
+distributed as,
+\[
+    \rho^2 = 1-U^{1/(N-1)},  \quad U \sim \mathrm{Unif}(0,1).
+\]
+
+\end{enumerate}
+
+
+
+\item \label{prob:pfa_corr} \emph{FA Simulation 
+for the Correlation Detector.}  Consider the correlation
+squared:
+\[
+    \rho^2 := \frac{|\xbf^*\rbf|^2}{\|\xbf\|^2\|\rbf\|^2} \in [0,1],
+\]
+which is the fraction of energy in the target direction $\xbf$
+of a RX signal $\rbf$.  We declare a signal as detected when:
+\[
+    \rho \geq t
+\]
+for some threshold $t$.  Assume the signals are length $N$.
+\begin{enumerate}[(a)]
+\item   The previous problem shows that when $\rbf$ is AWGN noise,
+$\rho^2$ is distributed as
+\[
+    \rho^2 = 1-U^{1/(N-1)},  \quad U \sim \mathrm{Unif}(0,1).
+\]
+What is false alarm probability in terms of $N$ and $t$.
+
+
+\item Suppose $N=128$ and we have a FA target of $P_{\rm FA}=10^{-6}$,
+what is the threshold $t$.
 
 \item Write MATLAB code to run a short simulation to plot the
 missed detection probability as a function of the SNR for $N=128$
-and a false alarm target of $10^{-6}$.  Use any assumptions as necessary.
+and a false alarm target of $10^{-6}$.  Use at least $(10)^5$ trials per SNR
+and test the SNR in the range \SI{5}{dB} to {20}{dB} in \SI{1}{dB} steps.
+Use any assumptions as necessary.
 \end{enumerate}
+
+
+
+
 
 \item \emph{Multiple delay hypotheses.}
 In the 5G NR standard, each base station cell periodically transmits a
@@ -267,15 +522,14 @@ are there per second?
 
 \item Suppose that to overcome carrier offset, the PSS MF detector
 tries several frequency hypotheses at each delay hypotheses.
-Suppose the carrier frequency is 37~GHz, the oscillator error is up to 10~ppm,
-and the maximum tolerable frequency error for the detector is 200 kHz.
+Suppose the carrier frequency is \SI{37}{GHz}, the oscillator error is up to 10~ppm,
+and the maximum tolerable frequency error for the detector is \SI{200}{kHz}.
 How many frequency hypotheses are needed in each delay hypothesis.
 
 \item If the average number of false alarms should be less than one
 false alarm per second, what should the FA target be?
 Make any reasonable assumptions.
 \end{enumerate}
-
 
 \end{enumerate}
 
