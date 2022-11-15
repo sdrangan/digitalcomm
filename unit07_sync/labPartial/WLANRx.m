@@ -4,7 +4,7 @@ classdef  WLANRx < matlab.mixin.SetGetExactNames
         psduLen = 2048;  % PSDU length in Bytes
         mcs = 3;         % MCS selection
         cfg;             % WLAN Toolbox configuration
-        fsampMHz;        % Sample rate in MHz
+        fsamp;        % Sample rate in MHz
         
         % Preamble components
         lstf;   % Legacy STF (short training field)
@@ -34,7 +34,7 @@ classdef  WLANRx < matlab.mixin.SetGetExactNames
                 'PSDULength', obj.psduLen,'MCS',obj.mcs);
             
             % Save the sample rate
-            obj.fsampMHz = wlanSampleRate(obj.cfg)*1e-6;
+            obj.fsamp = wlanSampleRate(obj.cfg);
             
             % Compute the preamble components
             obj.compPreamble();
@@ -46,7 +46,9 @@ classdef  WLANRx < matlab.mixin.SetGetExactNames
             
             % TODO:  Compute the LSTF and LLTF components of the premable
             % using the wlanLSTF and wlanLLTF methods.  Store them in
-            % obj.lstf and obj.lltf.
+            % obj.lstf and obj.lltf
+            %   obj.lstf = wlanLSTF(...);
+            %   obj.lltf = wlanLLTF(...);
             
         end
         
@@ -71,6 +73,7 @@ classdef  WLANRx < matlab.mixin.SetGetExactNames
             % TODO:  Implement the cyclic correlation algorithm and 
             % store the correlation rhoSTF in obj.rhoSTF.
             
+            
         end
         
         function STFdetect(obj)
@@ -82,7 +85,9 @@ classdef  WLANRx < matlab.mixin.SetGetExactNames
             %
             % If a packet is found set obj.istf = to the first location i
             % where obj.rhoSTF(i) > obj.tSTF.  
-            
+            %   obj.istf = ...
+            %   obj.pktFound = ...
+                      
         end
         
         function pktDetect(obj, r)
@@ -112,7 +117,7 @@ classdef  WLANRx < matlab.mixin.SetGetExactNames
 
             % TODO:  Correlate the extracted samples in r1 with LLTF in
             % obj.lltf.  Use the xcorr method.  Store the absolute value of
-            % the correlation in obj.rhoLTF.
+            % the MF in obj.rhoLTF.
             %
             %   obj.rhoLTF = ...
             
@@ -122,6 +127,8 @@ classdef  WLANRx < matlab.mixin.SetGetExactNames
             % This is the estimated start of the packet.
             %
             %    obj.iltf = ...
+            %    obj.iltf = obj.iltf + obj.istf;
+            
                                    
         end
             

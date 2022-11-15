@@ -4,7 +4,7 @@ classdef  WLANTx < matlab.mixin.SetGetExactNames
         psduLen = 512;   % PSDU length in Bytes
         mcs = 3;         % MCS selection
         cfg;             % WLAN Toolbox configuration
-        fsampMHz;        % Sample rate in MHz
+        fsamp;           % Sample rate in Hz
     end
     
     methods
@@ -21,9 +21,8 @@ classdef  WLANTx < matlab.mixin.SetGetExactNames
                 'PSDULength', obj.psduLen,'MCS',obj.mcs);
             
             % TODO:  Get the sample rate from the 
-            % wlanSampRate function.  Convert the sample rate to MHz
-            % 
-            % obj.fsampMHz = wlanSampleRate(...)
+            % wlanSampRate function using obj.cfg.              
+            %      obj.fsamp = wlanSampleRate(obj.cfg)
             
                         
         end
@@ -32,13 +31,15 @@ classdef  WLANTx < matlab.mixin.SetGetExactNames
             % genTxPkt:  Generates a TX WLAN packet
             
             % TODO
-            % Generate random bits corresponding to length in obj.psduLen
+            % Generate random bits corresponding to length in obj.psduLen.
+            % Note that obj.psduLen is in bytes.
             %
-            % bits = ...
+            %    bits = ...
             
             
             % TODO
             % Generate a packet using wlanWaveformGenerator
+            % using bits and obj.cfg
             %
             % xpkt = wlanWaveformGenerator(...)
             

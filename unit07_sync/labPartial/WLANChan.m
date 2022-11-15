@@ -5,7 +5,10 @@ classdef  WLANChan < matlab.mixin.SetGetExactNames
         dlyMin = 50;    % min and max delay in us
         dlyMax = 100;
         nsamp = 8192;   % min number of samples in each output
-        fsampMHz;       % sample rate in MHz        
+        fsampMHz;       % sample rate in MHz
+        
+        
+        
     end
     
     methods
