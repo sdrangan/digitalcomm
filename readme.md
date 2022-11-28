@@ -76,9 +76,9 @@ We will add to this section as the class progresses.
 * Unit 7.  Synchronization and match filtering
     * Lecture notes [[pdf]](./Lectures/Unit07_Sync.pdf) [[Powerpoint]](./Lectures/Unit07_Sync.pptx)
     * In-Class exercises:  [[Matlab]](./unit07_sync/syncInClass.mlx) [[Soln]](./unit07_sync/syncInClassSoln.mlx)
-    * Problems [[pdf]](./unit07_sync/prob_sync.pdf) [[Latex]](./unit07_sync/prob_sync.tex)
-    * MATLAB exercise:  [802.11 packet detection and synchronization](./unit07_sync/labPartial/wlanPreamble.mlx)
+    * Problems [[pdf]](./unit07_sync/prob_sync.pdf) [[Latex]](./unit07_sync/prob_sync.tex)    
     * [SDR Lab](https://github.com/sdrangan/sdrlab/tree/main/lab05_gain):  Gain control and building a simple AGC.
+    * MATLAB and SDR lab:  [802.11 packet detection and synchronization](./unit07_sync/labPartial/wlanPreamble.mlx)
 * Unit 8.  Equalization
     * Lecture notes [[pdf]](./Lectures/Unit08_Equalization.pdf) [[Powerpoint]](./Lectures/Unit08_Equalization.pptx)
     * Problems [[pdf]](./unit08_ofdm/prob_ofdm.pdf) [[Latex]](./unit08_ofdm/prob_ofdm.tex)
