@@ -61,10 +61,6 @@ classdef TxFilt < matlab.System
                 %    Ast = obj.Astop;  % Stopband rejection in dB
                 %    Fst = ... % stopband bandwidth in Hz
                 %    Fp = ...  % passband bandwidth in Hz                
-                Ap = 1;
-                Ast = obj.Astop;
-                Fp = obj.sigBW/2;
-                Fst = obj.rateIn/obj.ovRatio;
 
                 % Design the filter and get the filter coefficients
                 Hd = fdesign.lowpass('Fp,Fst,Ap,Ast',...
@@ -76,8 +72,6 @@ classdef TxFilt < matlab.System
             % TODO:  Upsample by obj.ovRation and filter with obj.bfilt
             %    y = upsample(x, ...);
             %    y = conv(...);
-            y = upsample(x, obj.ovRatio);
-            y = conv(obj.bfilt, y);
 
             % Apply backoff
             if obj.applyBackoff
@@ -89,14 +83,10 @@ classdef TxFilt < matlab.System
                 % you should get that 
                 %
                 %    mean(abs(y).^2) = 2*obj.dacFs^2*db2pow(-obj.backoffLev)
-                scale = obj.dacFs*sqrt(2*db2pow(-obj.backoffLev)/mean(abs(y).^2));
-                y = scale*y;                
 
                 % TODO:  Clip the output so that real(y) and imag(y)
                 %   are in the range [-obj.dacFS, obj.dacFS]    
                 %    y = ...
-                y = min(max(real(y),obj.dacFS), -obj.dacFS) + ...
-                    1i*min(max(imag(y),obj.dacFS), -obj.dacFS);
             end
         end
 

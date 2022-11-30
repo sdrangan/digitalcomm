@@ -26,8 +26,7 @@ classdef  WLANTx < matlab.System
             
             % TODO:  Get the sample rate from the 
             % wlanSampRate function using obj.cfg.              
-            %      obj.fsamp = wlanSampleRate(obj.cfg)
-            obj.fsamp = wlanSampleRate(obj.cfg);
+            %      obj.fsamp = wlanSampleRate(obj.cfg)            
                         
         end
     end
@@ -40,15 +39,14 @@ classdef  WLANTx < matlab.System
             % Generate random bits corresponding to length in obj.psduLen.
             % Note that obj.psduLen is in bytes.
             %
-            %    bits = ...
-            bits = randi([0,1], obj.psduLen*8,1);
+            %    bits = ...           
             
             % TODO
             % Generate a packet using wlanWaveformGenerator
             % using bits and obj.cfg
             %
             % xpkt = wlanWaveformGenerator(...)
-            x = wlanWaveformGenerator(bits, obj.cfg);
+           
         end              
     end
 end

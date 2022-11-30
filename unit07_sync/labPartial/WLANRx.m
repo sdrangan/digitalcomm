@@ -42,8 +42,7 @@ classdef  WLANRx <  matlab.System
 
             % TODO:  Get the sample rate from the
             % wlanSampRate function using obj.cfg.
-            %      obj.fsamp = wlanSampleRate(obj.cfg)
-            obj.fsamp = wlanSampleRate(obj.cfg);
+            %      obj.fsamp = wlanSampleRate(obj.cfg)            
 
             % Compute the preamble components
             obj.compPreamble();
@@ -57,9 +56,7 @@ classdef  WLANRx <  matlab.System
             % using the wlanLSTF and wlanLLTF methods.  Store them in
             % obj.lstf and obj.lltf
             %   obj.lstf = wlanLSTF(...);
-            %   obj.lltf = wlanLLTF(...);
-            obj.lstf = wlanLSTF(obj.cfg);
-            obj.lltf = wlanLLTF(obj.cfg);
+            %   obj.lltf = wlanLLTF(...);            
         end
 
 
@@ -79,22 +76,15 @@ classdef  WLANRx <  matlab.System
             len = length(obj.lstf);
             tol = 1e-8;
 
-            b = ones(len-period,1);
-            rprod = conj(r(1:n-period)).*r(1+period:n);
-            rsq = abs(r).^2;
-            rprodAvg = conv(rprod,b,'valid');
-            rsqAvg   = conv(rsq, b, 'valid') + tol;
-            n1 = length(rprodAvg);
-            obj.rhoSTF = abs(rprodAvg).^2 ./ rsqAvg(1:n1) ./ rsqAvg(1+period:n1+period);
+            % TODO:  Compute rhoSTF as described in wlanPreamble.mlx
+            %   obj.rhoSTF = ...
             
             % TODO: Find the maximum and location of the maximum
             % correlation
             %    rhoMax = max(obj.rhoSTF)
             %    obj.istf = index i where obj.rhoSTF(i) is maximum
-            [rhoMax, obj.istf] = max(obj.rhoSTF);
             
-            % TODO:  obj.pktFound to 1 if rhoMax > obj.tSTF.  Otherwise           
-            obj.pktFound = (rhoMax > obj.tSTF);
+            % TODO:  obj.pktFound to 1 if rhoMax > obj.tSTF.  Otherwise                       
         end
 
         function pktDetect(obj, r)
@@ -122,19 +112,12 @@ classdef  WLANRx <  matlab.System
             % TODO:  Compute the un-normalized MF of the partial RX signal
             % r1 with the target, obj.lltf;
             %    z = conv(...)         
-            xadj = flipud(conj(obj.lltf));
-            z = conv(r1,xadj,'valid');
                         
             % TODO:  Compute the correlation squared
             %    tol = 1e-8;
             %    Er = ...  
             %    Ex = ...
             %    obj.rhoLTF = ...
-            nx = length(xadj);
-            tol = 1e-8;
-            Er = conv(abs(r1).^2, ones(nx,1), 'valid') + tol;
-            Ex = sum(abs(xadj).^2);
-            obj.rhoLTF = abs(z).^2./Er/Ex;            
 
 
             % TODO:  Find the location of the maximum in obj.rhoLTF.  Add
@@ -142,7 +125,6 @@ classdef  WLANRx <  matlab.System
             % This is the estimated start of the packet.
             %
             %    obj.iltf = ...            
-            [~, obj.iltf] = max(obj.rhoLTF);
 
 
             % Add the initial point
