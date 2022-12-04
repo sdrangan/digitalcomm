@@ -87,7 +87,7 @@ We will add to this section as the class progresses.
 * Unit 10.  Convolutional codes
     * Lecture notes [[pdf]](./Lectures/Unit10_ConvCodes.pdf) [[Powerpoint]](./Lectures/Unit10_ConvCodes.pptx)
     * In-Class exercises:  [[Matlab]](./unit10_conv/convInClass.mlx) [[Soln]](./unit10_conv/convInClassSoln.mlx)
-    * Problems:  To be added
+    * Problems:  [[pdf]](./unit10_conv/prob_conv.pdf) [[Latex]](./unit10_conv/prob_conv.tex)
     * MATLAB exercise:  To be added
 * Unit 11.  Information theory
 

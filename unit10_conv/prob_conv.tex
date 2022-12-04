@@ -1,0 +1,540 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath, amssymb, bm, cite, epsfig, psfrag}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\usepackage[outercaption]{sidecap}
+\usetikzlibrary{shapes,arrows}
+\usepackage{mdframed}
+\usetikzlibrary{automata, positioning, arrows}
+%\usetikzlibrary{dsp,chains}
+
+%\restylefloat{figure}
+%\theoremstyle{plain}      \newtheorem{theorem}{Theorem}
+%\theoremstyle{definition} \newtheorem{definition}{Definition}
+
+\def\del{\partial}
+\def\ds{\displaystyle}
+\def\ts{\textstyle}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\beqa{\begin{eqnarray}}
+\def\eeqa{\end{eqnarray}}
+\def\beqan{\begin{eqnarray*}}
+\def\eeqan{\end{eqnarray*}}
+\def\nn{\nonumber}
+\def\binomial{\mathop{\mathrm{binomial}}}
+\def\half{{\ts\frac{1}{2}}}
+\def\Half{{\frac{1}{2}}}
+\def\N{{\mathbb{N}}}
+\def\Z{{\mathbb{Z}}}
+\def\Q{{\mathbb{Q}}}
+\def\F{{\mathbb{F}}}
+\def\R{{\mathbb{R}}}
+\def\C{{\mathbb{C}}}
+\def\argmin{\mathop{\mathrm{arg\,min}}}
+\def\argmax{\mathop{\mathrm{arg\,max}}}
+%\def\span{\mathop{\mathrm{span}}}
+\def\diag{\mathop{\mathrm{diag}}}
+\def\x{\times}
+\def\limn{\lim_{n \rightarrow \infty}}
+\def\liminfn{\liminf_{n \rightarrow \infty}}
+\def\limsupn{\limsup_{n \rightarrow \infty}}
+\def\MID{\,|\,}
+\def\MIDD{\,;\,}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{assumption}{Assumption}
+\newtheorem{claim}{Claim}
+\def\qed{\mbox{} \hfill $\Box$}
+\setlength{\unitlength}{1mm}
+
+\def\bhat{\widehat{b}}
+\def\ehat{\widehat{e}}
+\def\phat{\widehat{p}}
+\def\qhat{\widehat{q}}
+\def\rhat{\widehat{r}}
+\def\shat{\widehat{s}}
+\def\uhat{\widehat{u}}
+\def\ubar{\overline{u}}
+\def\vhat{\widehat{v}}
+\def\xhat{\widehat{x}}
+\def\xbar{\overline{x}}
+\def\zhat{\widehat{z}}
+\def\zbar{\overline{z}}
+\def\la{\leftarrow}
+\def\ra{\rightarrow}
+\def\MSE{\mbox{\small \sffamily MSE}}
+\def\SNR{\mbox{\small \sffamily SNR}}
+\def\SINR{\mbox{\small \sffamily SINR}}
+\def\arr{\rightarrow}
+\def\Exp{\mathbb{E}}
+\def\var{\mbox{var}}
+\def\Tr{\mbox{Tr}}
+\def\tm1{t\! - \! 1}
+\def\tp1{t\! + \! 1}
+
+\def\Xset{{\cal X}}
+
+\newcommand{\bs}[1]{{\boldsymbol{{#1}}}}
+\newcommand{\one}{\boldsymbol{1}}
+\newcommand{\abf}{\boldsymbol{a}}
+\newcommand{\bbf}{{\boldsymbol{b}}}
+\newcommand{\dbf}{\boldsymbol{d}}
+\newcommand{\ebf}{\boldsymbol{e}}
+\newcommand{\gbf}{\boldsymbol{g}}
+\newcommand{\hbf}{\boldsymbol{h}}
+\newcommand{\pbf}{\boldsymbol{p}}
+\newcommand{\pbfhat}{\widehat{\boldsymbol{p}}}
+\newcommand{\qbf}{\boldsymbol{q}}
+\newcommand{\qbfhat}{\widehat{\boldsymbol{q}}}
+\newcommand{\rbf}{\boldsymbol{r}}
+\newcommand{\rbfhat}{\widehat{\boldsymbol{r}}}
+\newcommand{\sbf}{\boldsymbol{s}}
+\newcommand{\sbfhat}{\widehat{\boldsymbol{s}}}
+\newcommand{\ubf}{\boldsymbol{u}}
+\newcommand{\ubfhat}{\widehat{\boldsymbol{u}}}
+\newcommand{\utildebf}{\tilde{\boldsymbol{u}}}
+\newcommand{\vbf}{\boldsymbol{v}}
+\newcommand{\vbfhat}{\widehat{\boldsymbol{v}}}
+\newcommand{\wbf}{\boldsymbol{w}}
+\newcommand{\wbfhat}{\widehat{\boldsymbol{w}}}
+\newcommand{\xbf}{\boldsymbol{x}}
+\newcommand{\xbfhat}{\widehat{\boldsymbol{x}}}
+\newcommand{\xbfbar}{\overline{\boldsymbol{x}}}
+\newcommand{\ybf}{\boldsymbol{y}}
+\newcommand{\zbf}{\boldsymbol{z}}
+\newcommand{\zbfbar}{\overline{\boldsymbol{z}}}
+\newcommand{\zbfhat}{\widehat{\boldsymbol{z}}}
+\newcommand{\Ahat}{\widehat{A}}
+\newcommand{\Abf}{\boldsymbol{A}}
+\newcommand{\Bbf}{\boldsymbol{B}}
+\newcommand{\Cbf}{\boldsymbol{C}}
+\newcommand{\Bbfhat}{\widehat{\boldsymbol{B}}}
+\newcommand{\Dbf}{\boldsymbol{D}}
+\newcommand{\Gbf}{\boldsymbol{G}}
+\newcommand{\Hbf}{\boldsymbol{H}}
+\newcommand{\Kbf}{\boldsymbol{K}}
+\newcommand{\Pbf}{\boldsymbol{P}}
+\newcommand{\Phat}{\widehat{P}}
+\newcommand{\Qbf}{\boldsymbol{Q}}
+\newcommand{\Rbf}{\boldsymbol{R}}
+\newcommand{\Rhat}{\widehat{R}}
+\newcommand{\Sbf}{\boldsymbol{S}}
+\newcommand{\Ubf}{\boldsymbol{U}}
+\newcommand{\Vbf}{\boldsymbol{V}}
+\newcommand{\Wbf}{\boldsymbol{W}}
+\newcommand{\Xhat}{\widehat{X}}
+\newcommand{\Xbf}{\boldsymbol{X}}
+\newcommand{\Ybf}{\boldsymbol{Y}}
+\newcommand{\Zbf}{\boldsymbol{Z}}
+\newcommand{\Zhat}{\widehat{Z}}
+\newcommand{\Zbfhat}{\widehat{\boldsymbol{Z}}}
+\def\alphabf{{\boldsymbol \alpha}}
+\def\betabf{{\boldsymbol \beta}}
+\def\mubf{{\boldsymbol \mu}}
+\def\lambdabf{{\boldsymbol \lambda}}
+\def\etabf{{\boldsymbol \eta}}
+\def\xibf{{\boldsymbol \xi}}
+\def\taubf{{\boldsymbol \tau}}
+\def\sigmahat{{\widehat{\sigma}}}
+\def\thetabf{{\bm{\theta}}}
+\def\thetabfhat{{\widehat{\bm{\theta}}}}
+\def\thetahat{{\widehat{\theta}}}
+\def\mubar{\overline{\mu}}
+\def\muavg{\mu}
+\def\sigbf{\bm{\sigma}}
+\def\etal{\emph{et al.}}
+\def\Ggothic{\mathfrak{G}}
+\def\Pset{{\mathcal P}}
+\newcommand{\bigCond}[2]{\bigl({#1} \!\bigm\vert\! {#2} \bigr)}
+\newcommand{\BigCond}[2]{\Bigl({#1} \!\Bigm\vert\! {#2} \Bigr)}
+
+\def\Rect{\mathop{Rect}}
+\def\sinc{\mathop{sinc}}
+\def\Real{\mathrm{Re}}
+\def\Imag{\mathrm{Im}}
+\newcommand{\bkt}[1]{{\langle #1 \rangle}}
+
+
+% Solution environment
+\definecolor{lightgray}{gray}{0.95}
+\newmdenv[linecolor=white,backgroundcolor=lightgray,frametitle=Solution:]{solution}
+
+
+
+
+
+
+
+\begin{document}
+
+\title{Problems:  Convolutional Codes}
+\author{Prof.\ Sundeep Rangan}
+\date{}
+
+\maketitle
+
+\begin{enumerate}
+
+\item \emph{Convolutional Encoder}.  Consider a rate $1/2$ convolutional
+encoder with polynomials:
+\begin{align*}
+    c_1[t] &= b[t]+b[t-1]+b[t-3], \\
+    c_2[t] &= b[t]+b[t-1]+b[t-2].
+\end{align*}
+\begin{enumerate}[(a)]
+\item What is the constraint length $K$?
+\item What are the generator polynomials, $g_1$ and $g_2$,
+in binary and octal?
+\item Suppose we wish to encode $\bs{b}=[1,0,1,1]$.  
+How many tail bits do you add?
+\item Write the output $c_1[t]$ and $c_2[t]$ for the input bits in
+part (c).
+\item For this input, what is rate of the code including the tail bits?
+
+
+\end{enumerate}
+
+\begin{solution}
+\begin{enumerate}[(a)]
+\item $K=4$ since the outputs depend on the last four samples.
+\item The polynomials in binary and octal are:
+\begin{align*}
+    g_1 &= [1,1,0,1]_b = [1,5] \\
+    g_2 &= [1,1,1,0]_b = [1,6]
+\end{align*}
+\item You add $K-1=3$ tail bits.  So, the input would be:
+\[
+    \tilde{b} = [1,0,1,1,\textcolor{blue}{0,0,0}].
+\]
+\item Running the convolution the two outputs are:
+\[
+    \begin{bmatrix}
+    c_1 \\
+    c_2
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+    1 & 1 & 0 & 0 & 0 & 1 & 0
+    \end{bmatrix}.
+\]
+\item \label{prob:fsm}
+There are 7 outputs in each stream for a total of 14 output bits.  Since there are 4 input bits, the rate is $R=4/14=2/7$.
+\end{enumerate}
+\end{solution}
+
+\item \label{prob:fsm}  
+\emph{FSM representation of convolutional encoders.}
+Consider a convolutional encoder
+\begin{align*}
+    c_1[t] &= b[t] + b[t-1], \\
+    c_2[t] &= b[t] + b[t-2].
+\end{align*}
+We will use the state $x[t] = (b[t-1],b[t-2])$.
+\begin{enumerate}[(a)]
+\item Complete Table~\ref{tbl:fsmempty} to indicate the next
+state $x[t+1]$ and output $c[t]$ for each current state $x[t]$
+and input $b[t]$.
+
+\item Given the table in part (a), draw a state diagram:
+\begin{itemize}
+\item Draw one node for each state. 
+\item Draw arrows indicating the transitions.  Use a different
+line type (e.g., solid and dashed) for transitions for $b[t]=0$
+and $b[t]=1$.
+\item Draw the output bits $c[t]$ above each transition.
+\end{itemize}
+\end{enumerate}
+
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x[t]$ & \multicolumn{2}{|c|}{$x[t+1]$}
+& \multicolumn{2}{|c|}{$c[t]=(c_1[t],c_2[t])$} \\ \cline{2-5}
+ & $b[t]=0$ & $b[t]=1$ & $b[t]=0$ & $b[t]=1$ \\ \hline
+(0,0) & & & &  \\ \hline
+(0,1) & & & &  \\ \hline
+(1,0) & & & &  \\ \hline
+(1,1) & & & &  \\ \hline
+\end{tabular}
+\end{center}
+\caption{Problem~\ref{prob:fsm}:  State transition
+and output table to be completed.}
+\label{tbl:fsmempty}
+\end{table}
+
+\begin{solution}
+\begin{enumerate}[(a)]
+\item See Table~\ref{tbl:fsm}.
+\item See Fig.~\ref{fig:fsm}.
+\end{enumerate}
+\end{solution}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x[t]$ & \multicolumn{2}{|c|}{$x[t+1]$} 
+& \multicolumn{2}{|c|}{$c[t]=(c_1[t],c_2[t])$} \\ \cline{2-5} 
+ & $b[t]=0$ & $b[t]=1$ & $b[t]=0$ & $b[t]=1$ \\ \hline
+(0,0) & (0,0) & (1,0) & (0,0) & (1,1) \\ \hline
+(0,1) & (0,0) & (1,0) & (1,1) & (1,0)\\ \hline
+(1,0) & (0,1) & (1,1) & (1,0) & (0,1) \\ \hline
+(1,1) & (0,1) & (1,1) & (1,1) & (0,0) \\ \hline
+\end{tabular}
+\end{center}
+\caption{Problem~\ref{prob:fsm} Solution:  State transition
+and output table}
+\label{tbl:fsm}
+\end{table}
+
+
+
+\begin{figure}
+\centering
+
+\begin{tikzpicture}
+    \node[state,fill=blue!5] (x00) {$(0,0)$};
+    \node[state,fill=blue!5, below left of = x00, 
+        yshift=-2cm, xshift=-2cm]
+        (x10) {$(1,0)$};
+    \node[state,fill=blue!5, below right of = x00, 
+        yshift=-2cm, xshift=2cm]
+        (x01) {$(0,1)$};
+    \node[state,fill=blue!5, below of=x00, 
+        yshift=-4cm] (x11) {$(1,1)$};
+    
+    \draw[->,blue,thick] (x00) edge[above] node{$11$} (x10);
+    \draw[->,blue,thick] (x01) edge[bend right,above] 
+        node{$10$} (x10);
+    \draw[->,blue,thick] (x10) edge[below] node{$01$} (x11);
+    \draw[->,blue,thick] (x11) edge[loop below] node{$00$} (x11);
+    
+    \draw[->,dashed,teal,thick] (x00) edge[loop above]
+        node{$00$} (x00);
+    \draw[->,dashed,teal,thick] (x01) edge[above] node{$11$}
+        (x00);
+    \draw[->,dashed,teal,thick] (x10) edge[bend right, below]
+        node{$10$} (x01);
+    \draw[->,dashed,teal,thick] (x11) edge[below] node{$11$} (x01);
+
+\end{tikzpicture}
+\caption{Problem~\ref{prob:fsm} solution.
+Representation of the convolutional encoder as a state
+machine.  The solid blue lines are the transitions for $b[t]=1$,
+and the dashed teal lines are the transitions for $b[t]=0$.
+The labels on the lines are the output bits $c[t]=(c_1[t],c_2[t])$ }
+\label{fig:fsm}
+\end{figure}
+
+\pagebreak
+\item \label{prob:viterbi} \emph{Viterbi decoding.} 
+Consider a encoder described by the FSM in Fig.~\ref{fig:threestate}.
+This FSM is not from a real convolutional encoder --
+it is completely made up to make the problem simple.
+At each time step, the FSM takes a binary input 
+$b[t] \in \{0,1\}$.
+There are three states, $x[t] \in \{0,1,2\}$. 
+There are two outputs $c[t]=(c_1[t],c_2[t])$.  The initial state
+is $x[0]=0$.
+
+\begin{enumerate}[(a)]
+\item Suppose that the information bits are 
+\[
+    \bs{b} = (b[0],b[1],b[2]) = (1,0,1).
+\]
+What is the state sequence $x[t]$ and output sequence $c[t]$?
+\item Draw the trellis diagram for the states $x[t]$, 
+$t=0,1,2,3$.  On each branch of the trellis:
+\begin{itemize}
+\item Use a different
+line type (e.g., solid and dashed) for transitions for $b[t]=0$
+and $b[t]=1$.
+\item Draw the output bits $c[t]$ above each transition.
+\end{itemize}
+
+\item Now suppose that the input bits $(b[0],b[1],b[2])$ 
+are not known.  To estimate the bits, 
+we maximize the value function:
+\[
+    J(c) = \sum_{i=1}^6 c_i L_i,
+\]
+for the LLRs:
+\[
+    L=(L_1,\ldots,L_6) = (-1.5,1,0.3,-2,1.8,0.5).
+\]
+On the trellis diagram from part (b), draw the branch metrics
+above each branch.
+
+\item Use the Viterbi algorithm to compute the partial value function at each node.  Write the values in the node.
+Find the sequence $\bs{b}=(b[0],b[1],b[2])$ that
+results in the highest value.
+
+\end{enumerate}
+
+
+\begin{figure}
+\centering
+
+\begin{tikzpicture}
+
+    \node[state,fill=blue!5] (x0) {$0$};
+    \node[state,fill=blue!5, below left of = x0,
+        yshift=-2cm, xshift=-2cm]
+        (x1) {$1$};
+    \node[state,fill=blue!5, below right of = x0,
+        yshift=-2cm, xshift=2cm]
+        (x2) {$2$};
+
+    \draw[->,blue,thick] (x0) edge[above] 
+        node{$00$} (x1);
+    \draw[->,blue,thick] (x1) edge[below]
+        node{$10$} (x2);
+    \draw[->,blue,thick] (x2) edge[above] node{$10$} (x0);
+
+    \draw[->,dashed,teal,thick] (x0) edge[loop above]
+        node{$01$} (x0);
+    \draw[->,dashed,teal,thick] (x1) edge[loop below]
+        node{$10$} (x1);
+    \draw[->,dashed,teal,thick] (x2) edge[loop below]
+        node{$11$} (x2);
+        \end{tikzpicture}
+\caption{Problem~\ref{prob:viterbi}.
+FSM representation of an encoder with three states
+$x[t]\in \{0,1,2\}$.  
+The solid blue lines are the transitions for $b[t]=1$,
+and the dashed teal lines are the transitions for $b[t]=0$. 
+}
+\label{fig:threestate}
+\end{figure}
+
+\begin{solution}
+\begin{enumerate}[(a)]
+\item Following the FSM in Fig.~\ref{fig:threestate}, 
+we get 
+\[
+    \bs{x} = (x[0],x[1],x[2],x[3]) = (0,1,1,2).
+\]
+The output sequence is:
+\[
+    \bs{c} = (c[0],c[1],c[2]) = (00,10,10).
+\]
+
+\item The trellis diagram for $t=0,1,2,3$ is shown in 
+Fig.~\ref{fig:trellis}.
+
+\item The branch metrics are shown on the branches in 
+Fig.~\ref{fig:trellis}.
+
+\item The value function is shown in each node in 
+Fig.~\ref{fig:trellis}.  We see that at the final node, the
+highest value function is at $x[3]=2$.
+Tracing back from this node the optimal sequence is:
+\[
+    x[3] = 2 \Rightarrow x[2] = 2 \Rightarrow x[1] = 1 \Rightarrow x[0] = 0.
+\]
+The sequence that results in the highest value is:
+\[
+    \bs{b} = (1,1,0).
+\]
+
+\end{enumerate}
+
+\end{solution}
+
+
+
+\begin{figure}
+\centering
+
+\begin{tikzpicture}
+
+    % x = 0 row
+    \node[draw,circle,fill=blue!5,minimum size=0.9cm,inner sep=0]
+        (x00) {0};
+    \node[above of=x00,yshift=0.5cm] {$t=0$};
+    \foreach \tp\tn\mu\v in {0/1/1/1,1/2/0,2/3/0.5/0.5} {
+        \node[draw,circle,fill=blue!5,right of=x0\tp,xshift=2cm,
+            minimum size=0.9cm,inner sep=0] (x0\tn) {\v};
+        \draw[->,thick,teal,dashed] (x0\tp) node[above,xshift=1cm] {01,\mu}
+        -- (x0\tn);
+        \node[above of=x0\tn,yshift=0.5cm] {$t=\tn$};
+    }
+    
+    % x = 1 row
+    \node[draw,circle,fill=blue!5,below of=x01,yshift=-1cm,
+        minimum size=0.9cm,inner sep=0] 
+        (x11) {0};
+    \draw[->,thick,blue] (x00) -- 
+        node[above,xshift=0cm]  {00,0}   (x11);        
+    \foreach \tp\tn\mu\v in {1/2/0.3/0.3,2/3/1.8/2.1} {
+        \node[draw,circle,fill=blue!5,below of=x0\tn,yshift=-1cm,
+            minimum size=0.9cm,inner sep=0] (x1\tn) {\v};
+        \draw[->,thick,teal,dashed] (x1\tp) -- 
+            node[above,xshift=0cm] {10,\mu} (x1\tn);
+        \draw[->,thick,blue] (x0\tp) -- node[above,xshift=0cm] 
+            {00,0} (x1\tn);
+    }
+    
+    % x = 2 row
+    \node[draw,circle,fill=blue!5,below of=x12,yshift=-1cm,
+        minimum size=0.9cm,inner sep=0]
+        (x22) {0.3};
+    \draw[->,thick,blue] (x11) -- 
+        node[above,xshift=0cm]  {10,0.3} (x22);
+    \node[draw,circle,fill=blue!5,below of=x13,yshift=-1cm,
+        minimum size=0.9cm,inner sep=0]
+        (x23) {2.6};
+    \draw[->,thick,blue] (x12) -- node[above,xshift=0cm] 
+        {10,1.8}(x23);
+    \draw[->,thick,teal,dashed] (x22) node[above,xshift=1cm] {11,2.3}
+        -- (x23);
+    \draw[->,thick,blue] (x22) -- node[above,xshift=1.25cm,yshift=1cm] {10,1.8} (x03);
+    
+    \node[left of=x00,xshift=-1cm] (x0label) {$x[t]=0$};
+    \node[below of=x0label,yshift=-1cm] (x1label) {$x[t]=1$};
+    \node[below of=x1label,yshift=-1cm] (x2label) {$x[t]=2$};
+    
+        
+ 
+\end{tikzpicture}
+\caption{Problem~\ref{prob:viterbi} solution.  
+Trellis diagram where the
+ solid blue lines are the transitions for $b[t]=1$,
+and the dashed teal lines are the transitions for $b[t]=0$.
+The branches are labeled with (output bits, branch metric).
+The nodes are labeled with the partial value function
+from the Viterbi algorithm. }
+\label{fig:trellis}
+\end{figure} 
+
+\end{enumerate}
+\end{document}
+
+
+  E{ x[n]y[n-k] }
+
+  X = fft(x)
+  Y = fft(y)
+  S_{xy} = X*Y;
+
+
+  X[k]Y^*[k]
+
