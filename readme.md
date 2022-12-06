@@ -90,5 +90,7 @@ We will add to this section as the class progresses.
     * Problems:  [[pdf]](./unit10_conv/prob_conv.pdf) [[Latex]](./unit10_conv/prob_conv.tex)
     * MATLAB exercise:  To be added
 * Unit 11.  Information theory
+    * Lecture notes [[pdf]](./Lectures/Unit11_Capacity.pdf) [[Powerpoint]](./Lectures/Unit11_Capacity.pptx)
+    * Problems:  To be added
 
 
