@@ -200,7 +200,7 @@ encoder with polynomials:
 \item What is the constraint length $K$?
 \item What are the generator polynomials, $g_1$ and $g_2$,
 in binary and octal?
-\item Suppose we wish to encode $\bs{b}=[1,0,1,1]$.  
+\item Suppose we wish to encode $\bs{b}=[1,0,1,1]$.
 How many tail bits do you add?
 \item Write the output $c_1[t]$ and $c_2[t]$ for the input bits in
 part (c).
@@ -209,36 +209,8 @@ part (c).
 
 \end{enumerate}
 
-\begin{solution}
-\begin{enumerate}[(a)]
-\item $K=4$ since the outputs depend on the last four samples.
-\item The polynomials in binary and octal are:
-\begin{align*}
-    g_1 &= [1,1,0,1]_b = [1,5] \\
-    g_2 &= [1,1,1,0]_b = [1,6]
-\end{align*}
-\item You add $K-1=3$ tail bits.  So, the input would be:
-\[
-    \tilde{b} = [1,0,1,1,\textcolor{blue}{0,0,0}].
-\]
-\item Running the convolution the two outputs are:
-\[
-    \begin{bmatrix}
-    c_1 \\
-    c_2
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-    1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-    1 & 1 & 0 & 0 & 0 & 1 & 0
-    \end{bmatrix}.
-\]
-\item \label{prob:fsm}
-There are 7 outputs in each stream for a total of 14 output bits.  Since there are 4 input bits, the rate is $R=4/14=2/7$.
-\end{enumerate}
-\end{solution}
 
-\item \label{prob:fsm}  
+\item \label{prob:fsm}
 \emph{FSM representation of convolutional encoders.}
 Consider a convolutional encoder
 \begin{align*}
@@ -253,7 +225,7 @@ and input $b[t]$.
 
 \item Given the table in part (a), draw a state diagram:
 \begin{itemize}
-\item Draw one node for each state. 
+\item Draw one node for each state.
 \item Draw arrows indicating the transitions.  Use a different
 line type (e.g., solid and dashed) for transitions for $b[t]=0$
 and $b[t]=1$.
@@ -280,88 +252,27 @@ and output table to be completed.}
 \label{tbl:fsmempty}
 \end{table}
 
-\begin{solution}
-\begin{enumerate}[(a)]
-\item See Table~\ref{tbl:fsm}.
-\item See Fig.~\ref{fig:fsm}.
-\end{enumerate}
-\end{solution}
-
-\begin{table}
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-$x[t]$ & \multicolumn{2}{|c|}{$x[t+1]$} 
-& \multicolumn{2}{|c|}{$c[t]=(c_1[t],c_2[t])$} \\ \cline{2-5} 
- & $b[t]=0$ & $b[t]=1$ & $b[t]=0$ & $b[t]=1$ \\ \hline
-(0,0) & (0,0) & (1,0) & (0,0) & (1,1) \\ \hline
-(0,1) & (0,0) & (1,0) & (1,1) & (1,0)\\ \hline
-(1,0) & (0,1) & (1,1) & (1,0) & (0,1) \\ \hline
-(1,1) & (0,1) & (1,1) & (1,1) & (0,0) \\ \hline
-\end{tabular}
-\end{center}
-\caption{Problem~\ref{prob:fsm} Solution:  State transition
-and output table}
-\label{tbl:fsm}
-\end{table}
 
 
-
-\begin{figure}
-\centering
-
-\begin{tikzpicture}
-    \node[state,fill=blue!5] (x00) {$(0,0)$};
-    \node[state,fill=blue!5, below left of = x00, 
-        yshift=-2cm, xshift=-2cm]
-        (x10) {$(1,0)$};
-    \node[state,fill=blue!5, below right of = x00, 
-        yshift=-2cm, xshift=2cm]
-        (x01) {$(0,1)$};
-    \node[state,fill=blue!5, below of=x00, 
-        yshift=-4cm] (x11) {$(1,1)$};
-    
-    \draw[->,blue,thick] (x00) edge[above] node{$11$} (x10);
-    \draw[->,blue,thick] (x01) edge[bend right,above] 
-        node{$10$} (x10);
-    \draw[->,blue,thick] (x10) edge[below] node{$01$} (x11);
-    \draw[->,blue,thick] (x11) edge[loop below] node{$00$} (x11);
-    
-    \draw[->,dashed,teal,thick] (x00) edge[loop above]
-        node{$00$} (x00);
-    \draw[->,dashed,teal,thick] (x01) edge[above] node{$11$}
-        (x00);
-    \draw[->,dashed,teal,thick] (x10) edge[bend right, below]
-        node{$10$} (x01);
-    \draw[->,dashed,teal,thick] (x11) edge[below] node{$11$} (x01);
-
-\end{tikzpicture}
-\caption{Problem~\ref{prob:fsm} solution.
-Representation of the convolutional encoder as a state
-machine.  The solid blue lines are the transitions for $b[t]=1$,
-and the dashed teal lines are the transitions for $b[t]=0$.
-The labels on the lines are the output bits $c[t]=(c_1[t],c_2[t])$ }
-\label{fig:fsm}
-\end{figure}
 
 \pagebreak
-\item \label{prob:viterbi} \emph{Viterbi decoding.} 
+\item \label{prob:viterbi} \emph{Viterbi decoding.}
 Consider a encoder described by the FSM in Fig.~\ref{fig:threestate}.
 This FSM is not from a real convolutional encoder --
 it is completely made up to make the problem simple.
-At each time step, the FSM takes a binary input 
+At each time step, the FSM takes a binary input
 $b[t] \in \{0,1\}$.
-There are three states, $x[t] \in \{0,1,2\}$. 
+There are three states, $x[t] \in \{0,1,2\}$.
 There are two outputs $c[t]=(c_1[t],c_2[t])$.  The initial state
 is $x[0]=0$.
 
 \begin{enumerate}[(a)]
-\item Suppose that the information bits are 
+\item Suppose that the information bits are
 \[
     \bs{b} = (b[0],b[1],b[2]) = (1,0,1).
 \]
 What is the state sequence $x[t]$ and output sequence $c[t]$?
-\item Draw the trellis diagram for the states $x[t]$, 
+\item Draw the trellis diagram for the states $x[t]$,
 $t=0,1,2,3$.  On each branch of the trellis:
 \begin{itemize}
 \item Use a different
@@ -370,8 +281,8 @@ and $b[t]=1$.
 \item Draw the output bits $c[t]$ above each transition.
 \end{itemize}
 
-\item Now suppose that the input bits $(b[0],b[1],b[2])$ 
-are not known.  To estimate the bits, 
+\item Now suppose that the input bits $(b[0],b[1],b[2])$
+are not known.  To estimate the bits,
 we maximize the value function:
 \[
     J(c) = \sum_{i=1}^6 c_i L_i,
@@ -403,7 +314,7 @@ results in the highest value.
         yshift=-2cm, xshift=2cm]
         (x2) {$2$};
 
-    \draw[->,blue,thick] (x0) edge[above] 
+    \draw[->,blue,thick] (x0) edge[above]
         node{$00$} (x1);
     \draw[->,blue,thick] (x1) edge[below]
         node{$10$} (x2);
@@ -418,123 +329,16 @@ results in the highest value.
         \end{tikzpicture}
 \caption{Problem~\ref{prob:viterbi}.
 FSM representation of an encoder with three states
-$x[t]\in \{0,1,2\}$.  
+$x[t]\in \{0,1,2\}$.
 The solid blue lines are the transitions for $b[t]=1$,
-and the dashed teal lines are the transitions for $b[t]=0$. 
+and the dashed teal lines are the transitions for $b[t]=0$.
 }
 \label{fig:threestate}
 \end{figure}
 
-\begin{solution}
-\begin{enumerate}[(a)]
-\item Following the FSM in Fig.~\ref{fig:threestate}, 
-we get 
-\[
-    \bs{x} = (x[0],x[1],x[2],x[3]) = (0,1,1,2).
-\]
-The output sequence is:
-\[
-    \bs{c} = (c[0],c[1],c[2]) = (00,10,10).
-\]
-
-\item The trellis diagram for $t=0,1,2,3$ is shown in 
-Fig.~\ref{fig:trellis}.
-
-\item The branch metrics are shown on the branches in 
-Fig.~\ref{fig:trellis}.
-
-\item The value function is shown in each node in 
-Fig.~\ref{fig:trellis}.  We see that at the final node, the
-highest value function is at $x[3]=2$.
-Tracing back from this node the optimal sequence is:
-\[
-    x[3] = 2 \Rightarrow x[2] = 2 \Rightarrow x[1] = 1 \Rightarrow x[0] = 0.
-\]
-The sequence that results in the highest value is:
-\[
-    \bs{b} = (1,1,0).
-\]
-
-\end{enumerate}
-
-\end{solution}
-
-
-
-\begin{figure}
-\centering
-
-\begin{tikzpicture}
-
-    % x = 0 row
-    \node[draw,circle,fill=blue!5,minimum size=0.9cm,inner sep=0]
-        (x00) {0};
-    \node[above of=x00,yshift=0.5cm] {$t=0$};
-    \foreach \tp\tn\mu\v in {0/1/1/1,1/2/0,2/3/0.5/0.5} {
-        \node[draw,circle,fill=blue!5,right of=x0\tp,xshift=2cm,
-            minimum size=0.9cm,inner sep=0] (x0\tn) {\v};
-        \draw[->,thick,teal,dashed] (x0\tp) node[above,xshift=1cm] {01,\mu}
-        -- (x0\tn);
-        \node[above of=x0\tn,yshift=0.5cm] {$t=\tn$};
-    }
-    
-    % x = 1 row
-    \node[draw,circle,fill=blue!5,below of=x01,yshift=-1cm,
-        minimum size=0.9cm,inner sep=0] 
-        (x11) {0};
-    \draw[->,thick,blue] (x00) -- 
-        node[above,xshift=0cm]  {00,0}   (x11);        
-    \foreach \tp\tn\mu\v in {1/2/0.3/0.3,2/3/1.8/2.1} {
-        \node[draw,circle,fill=blue!5,below of=x0\tn,yshift=-1cm,
-            minimum size=0.9cm,inner sep=0] (x1\tn) {\v};
-        \draw[->,thick,teal,dashed] (x1\tp) -- 
-            node[above,xshift=0cm] {10,\mu} (x1\tn);
-        \draw[->,thick,blue] (x0\tp) -- node[above,xshift=0cm] 
-            {00,0} (x1\tn);
-    }
-    
-    % x = 2 row
-    \node[draw,circle,fill=blue!5,below of=x12,yshift=-1cm,
-        minimum size=0.9cm,inner sep=0]
-        (x22) {0.3};
-    \draw[->,thick,blue] (x11) -- 
-        node[above,xshift=0cm]  {10,0.3} (x22);
-    \node[draw,circle,fill=blue!5,below of=x13,yshift=-1cm,
-        minimum size=0.9cm,inner sep=0]
-        (x23) {2.6};
-    \draw[->,thick,blue] (x12) -- node[above,xshift=0cm] 
-        {10,1.8}(x23);
-    \draw[->,thick,teal,dashed] (x22) node[above,xshift=1cm] {11,2.3}
-        -- (x23);
-    \draw[->,thick,blue] (x22) -- node[above,xshift=1.25cm,yshift=1cm] {10,1.8} (x03);
-    
-    \node[left of=x00,xshift=-1cm] (x0label) {$x[t]=0$};
-    \node[below of=x0label,yshift=-1cm] (x1label) {$x[t]=1$};
-    \node[below of=x1label,yshift=-1cm] (x2label) {$x[t]=2$};
-    
-        
- 
-\end{tikzpicture}
-\caption{Problem~\ref{prob:viterbi} solution.  
-Trellis diagram where the
- solid blue lines are the transitions for $b[t]=1$,
-and the dashed teal lines are the transitions for $b[t]=0$.
-The branches are labeled with (output bits, branch metric).
-The nodes are labeled with the partial value function
-from the Viterbi algorithm. }
-\label{fig:trellis}
-\end{figure} 
 
 \end{enumerate}
 \end{document}
 
 
-  E{ x[n]y[n-k] }
-
-  X = fft(x)
-  Y = fft(y)
-  S_{xy} = X*Y;
-
-
-  X[k]Y^*[k]
 
