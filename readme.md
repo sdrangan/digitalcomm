@@ -82,13 +82,13 @@ We will add to this section as the class progresses.
 * Unit 8.  Equalization
     * Lecture notes [[pdf]](./Lectures/Unit08_Equalization.pdf) [[Powerpoint]](./Lectures/Unit08_Equalization.pptx)
     * Problems [[pdf]](./unit08_ofdm/prob_ofdm.pdf) [[Latex]](./unit08_ofdm/prob_ofdm.tex)
-    * MATLAB exercise:  [802.11 OFDM equalization](./unit08_ofdm/lab_ofdm.m)
+    * MATLAB and SDR lab:  [802.11 channel estimation and equalization](./unit08_ofdm/labPartial)
 * Unit 9.  Linear codes
 * Unit 10.  Convolutional codes
     * Lecture notes [[pdf]](./Lectures/Unit10_ConvCodes.pdf) [[Powerpoint]](./Lectures/Unit10_ConvCodes.pptx)
     * In-Class exercises:  [[Matlab]](./unit10_conv/convInClass.mlx) [[Soln]](./unit10_conv/convInClassSoln.mlx)
     * Problems:  [[pdf]](./unit10_conv/prob_conv.pdf) [[Latex]](./unit10_conv/prob_conv.tex)
-    * MATLAB exercise:  To be added
+    * MATLAB:  To be added
 * Unit 11.  Information theory
     * Lecture notes [[pdf]](./Lectures/Unit11_Capacity.pdf) [[Powerpoint]](./Lectures/Unit11_Capacity.pptx)
     * Problems:  To be added
