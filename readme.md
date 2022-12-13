@@ -91,6 +91,6 @@ We will add to this section as the class progresses.
     * MATLAB:  To be added
 * Unit 11.  Information theory
     * Lecture notes [[pdf]](./Lectures/Unit11_Capacity.pdf) [[Powerpoint]](./Lectures/Unit11_Capacity.pptx)
-    * Problems:  To be added
+    * Problems:  [[pdf]](./unit11_capacity/prob_it.pdf) [[Latex]](./unit11_capacity/prob_it.tex)
 
 

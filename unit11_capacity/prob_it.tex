@@ -1,0 +1,333 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath, amssymb, bm, cite, epsfig, psfrag}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\usepackage[outercaption]{sidecap}
+\usetikzlibrary{shapes,arrows}
+\usepackage{mdframed}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage{mcode}
+\usetikzlibrary{automata, positioning, arrows}
+%\usetikzlibrary{dsp,chains}
+
+%\restylefloat{figure}
+%\theoremstyle{plain}      \newtheorem{theorem}{Theorem}
+%\theoremstyle{definition} \newtheorem{definition}{Definition}
+
+\def\del{\partial}
+\def\ds{\displaystyle}
+\def\ts{\textstyle}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\beqa{\begin{eqnarray}}
+\def\eeqa{\end{eqnarray}}
+\def\beqan{\begin{eqnarray*}}
+\def\eeqan{\end{eqnarray*}}
+\def\nn{\nonumber}
+\def\binomial{\mathop{\mathrm{binomial}}}
+\def\half{{\ts\frac{1}{2}}}
+\def\Half{{\frac{1}{2}}}
+\def\N{{\mathbb{N}}}
+\def\Z{{\mathbb{Z}}}
+\def\Q{{\mathbb{Q}}}
+\def\F{{\mathbb{F}}}
+\def\R{{\mathbb{R}}}
+\def\C{{\mathbb{C}}}
+\def\argmin{\mathop{\mathrm{arg\,min}}}
+\def\argmax{\mathop{\mathrm{arg\,max}}}
+%\def\span{\mathop{\mathrm{span}}}
+\def\diag{\mathop{\mathrm{diag}}}
+\def\x{\times}
+\def\limn{\lim_{n \rightarrow \infty}}
+\def\liminfn{\liminf_{n \rightarrow \infty}}
+\def\limsupn{\limsup_{n \rightarrow \infty}}
+\def\MID{\,|\,}
+\def\MIDD{\,;\,}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{assumption}{Assumption}
+\newtheorem{claim}{Claim}
+\def\qed{\mbox{} \hfill $\Box$}
+\setlength{\unitlength}{1mm}
+
+\def\bhat{\widehat{b}}
+\def\ehat{\widehat{e}}
+\def\phat{\widehat{p}}
+\def\qhat{\widehat{q}}
+\def\rhat{\widehat{r}}
+\def\shat{\widehat{s}}
+\def\uhat{\widehat{u}}
+\def\ubar{\overline{u}}
+\def\vhat{\widehat{v}}
+\def\xhat{\widehat{x}}
+\def\xbar{\overline{x}}
+\def\zhat{\widehat{z}}
+\def\zbar{\overline{z}}
+\def\la{\leftarrow}
+\def\ra{\rightarrow}
+\def\MSE{\mbox{\small \sffamily MSE}}
+\def\SNR{\mbox{\small \sffamily SNR}}
+\def\SINR{\mbox{\small \sffamily SINR}}
+\def\arr{\rightarrow}
+\def\Exp{\mathbb{E}}
+\def\var{\mbox{var}}
+\def\Tr{\mbox{Tr}}
+\def\tm1{t\! - \! 1}
+\def\tp1{t\! + \! 1}
+
+\def\Xset{{\cal X}}
+
+\newcommand{\bs}[1]{{\boldsymbol{{#1}}}}
+\newcommand{\one}{\boldsymbol{1}}
+\newcommand{\abf}{\boldsymbol{a}}
+\newcommand{\bbf}{{\boldsymbol{b}}}
+\newcommand{\dbf}{\boldsymbol{d}}
+\newcommand{\ebf}{\boldsymbol{e}}
+\newcommand{\gbf}{\boldsymbol{g}}
+\newcommand{\hbf}{\boldsymbol{h}}
+\newcommand{\pbf}{\boldsymbol{p}}
+\newcommand{\pbfhat}{\widehat{\boldsymbol{p}}}
+\newcommand{\qbf}{\boldsymbol{q}}
+\newcommand{\qbfhat}{\widehat{\boldsymbol{q}}}
+\newcommand{\rbf}{\boldsymbol{r}}
+\newcommand{\rbfhat}{\widehat{\boldsymbol{r}}}
+\newcommand{\sbf}{\boldsymbol{s}}
+\newcommand{\sbfhat}{\widehat{\boldsymbol{s}}}
+\newcommand{\ubf}{\boldsymbol{u}}
+\newcommand{\ubfhat}{\widehat{\boldsymbol{u}}}
+\newcommand{\utildebf}{\tilde{\boldsymbol{u}}}
+\newcommand{\vbf}{\boldsymbol{v}}
+\newcommand{\vbfhat}{\widehat{\boldsymbol{v}}}
+\newcommand{\wbf}{\boldsymbol{w}}
+\newcommand{\wbfhat}{\widehat{\boldsymbol{w}}}
+\newcommand{\xbf}{\boldsymbol{x}}
+\newcommand{\xbfhat}{\widehat{\boldsymbol{x}}}
+\newcommand{\xbfbar}{\overline{\boldsymbol{x}}}
+\newcommand{\ybf}{\boldsymbol{y}}
+\newcommand{\zbf}{\boldsymbol{z}}
+\newcommand{\zbfbar}{\overline{\boldsymbol{z}}}
+\newcommand{\zbfhat}{\widehat{\boldsymbol{z}}}
+\newcommand{\Ahat}{\widehat{A}}
+\newcommand{\Abf}{\boldsymbol{A}}
+\newcommand{\Bbf}{\boldsymbol{B}}
+\newcommand{\Cbf}{\boldsymbol{C}}
+\newcommand{\Bbfhat}{\widehat{\boldsymbol{B}}}
+\newcommand{\Dbf}{\boldsymbol{D}}
+\newcommand{\Gbf}{\boldsymbol{G}}
+\newcommand{\Hbf}{\boldsymbol{H}}
+\newcommand{\Kbf}{\boldsymbol{K}}
+\newcommand{\Pbf}{\boldsymbol{P}}
+\newcommand{\Phat}{\widehat{P}}
+\newcommand{\Qbf}{\boldsymbol{Q}}
+\newcommand{\Rbf}{\boldsymbol{R}}
+\newcommand{\Rhat}{\widehat{R}}
+\newcommand{\Sbf}{\boldsymbol{S}}
+\newcommand{\Ubf}{\boldsymbol{U}}
+\newcommand{\Vbf}{\boldsymbol{V}}
+\newcommand{\Wbf}{\boldsymbol{W}}
+\newcommand{\Xhat}{\widehat{X}}
+\newcommand{\Xbf}{\boldsymbol{X}}
+\newcommand{\Ybf}{\boldsymbol{Y}}
+\newcommand{\Zbf}{\boldsymbol{Z}}
+\newcommand{\Zhat}{\widehat{Z}}
+\newcommand{\Zbfhat}{\widehat{\boldsymbol{Z}}}
+\def\alphabf{{\boldsymbol \alpha}}
+\def\betabf{{\boldsymbol \beta}}
+\def\mubf{{\boldsymbol \mu}}
+\def\lambdabf{{\boldsymbol \lambda}}
+\def\etabf{{\boldsymbol \eta}}
+\def\xibf{{\boldsymbol \xi}}
+\def\taubf{{\boldsymbol \tau}}
+\def\sigmahat{{\widehat{\sigma}}}
+\def\thetabf{{\bm{\theta}}}
+\def\thetabfhat{{\widehat{\bm{\theta}}}}
+\def\thetahat{{\widehat{\theta}}}
+\def\mubar{\overline{\mu}}
+\def\muavg{\mu}
+\def\sigbf{\bm{\sigma}}
+\def\etal{\emph{et al.}}
+\def\Ggothic{\mathfrak{G}}
+\def\Pset{{\mathcal P}}
+\newcommand{\bigCond}[2]{\bigl({#1} \!\bigm\vert\! {#2} \bigr)}
+\newcommand{\BigCond}[2]{\Bigl({#1} \!\Bigm\vert\! {#2} \Bigr)}
+
+\def\Rect{\mathop{Rect}}
+\def\sinc{\mathop{sinc}}
+\def\Real{\mathrm{Re}}
+\def\Imag{\mathrm{Im}}
+\newcommand{\bkt}[1]{{\langle #1 \rangle}}
+
+
+% Solution environment
+\definecolor{lightgray}{gray}{0.95}
+\newmdenv[linecolor=white,backgroundcolor=lightgray,frametitle=Solution:]{solution}
+
+
+
+
+
+
+
+\begin{document}
+
+\title{Problem:  Information Theory and Capacity}
+\author{Prof.\ Sundeep Rangan}
+\date{}
+
+\maketitle
+
+\begin{enumerate}
+
+\item \label{prob:exp} \emph{Entropy of an exponential}.  Find the relative entropy of an exponential distributed $X$
+with $\Exp(X)=1/\lambda$.
+
+
+\item \emph{Mutual information on a discrete set.}  Suppose that $X$ is discrete uniform on $\{0,1,\ldots,N-1\}$ 
+for some $N > 0$.  Let $Y = X + W$ where 
+\[
+    P(W=1)=1-P(W=0) = p
+\]
+for some $p > 0$.
+\begin{enumerate}[(a)] 
+\item Given $Y = y$ for $y>0$, we know $X=y$ or $y-1$.  Find $P(X=y|Y=y)$ and $P(X=y-1|Y=y)$.
+
+\item Find the conditional entropy $H(X|Y=y)$ for $y > 0$.
+
+\item Find the conditional entropy $H(X|Y=y)$ for $y = 0$.
+
+\item Find the conditional entropy $H(X)$.
+
+\item Find the mutual information $I(X;Y)$.
+\end{enumerate}
+
+
+\item \label{prob:capacity}  \emph{AWGN Capacity}.
+Suppose that a signal is transmitted on a bandwidth $B=$\, \SI{100}{MHz},
+transmit power $P_t=$\,\SI{30}{dBm}, path loss $L=$\,\SI{103}{dB},
+and noise PSD (including noise figure) of $N_0=$\,\SI{-170}{dBm/Hz}.
+\begin{enumerate}[(a)]
+\item What is the SNR per Hz, $\gamma_s$?
+
+\item What is the Shannon capacity $C$?
+
+\item Suppose that the system achieves a rate $R = 0.5C$.  What is the $E_b/N_0$ in dB.
+\end{enumerate}
+
+
+\item \label{prob:expmi} \emph{Mutual information with a binary modulated exponential}.  
+Suppose that $X \in \{0,1\}$
+is an equiprobable bit and we observe $Y$ that has a conditional exponential distribution
+\[
+    p(y|X=i) = \lambda_i \exp(-\lambda_i y), \quad y \geq 0,
+\]
+for values $\lambda_0$ and $\lambda_1$ with $\lambda_0 > \lambda_1$.  We wish to compute the mutual information $I(X;Y)$.  
+
+
+\begin{enumerate}[(a)]
+\item Find the conditional entropy $h(Y|X)$.  You can the results from Problem~\ref{prob:exp}.
+
+\item Find the PDF of $Y$, $p(y)$.
+
+\item Find an expression for the relative entropy $h(Y)$ and the mutual information $I(Y;X)$.
+This expression will have an integral.  You do not need to evaluate it.
+
+\item Use MATLAB to compute and plot $I(X;Y)$ for $\lambda_0=1$ and $\lambda_1 = \lambda_0/\gamma$
+where $\gamma$ is in the range $\gamma \in [1,50]$.  You can interpret $\gamma$ as a SNR since it is
+the ratio of the two exponential levels.  To perform the numerical integration, you can use the 
+MATLAB function \mcode{integral}. Although the integral is over $y \in [0,\infty)$, you may
+need to run it over a finite range to obtain good results.
+
+\end{enumerate}
+
+
+
+\item \label{prob:dismi} \emph{Numerically computing mutual information for a discrete channel.}
+In this problem, we show how to compute the mutual information numerically.
+As a completely toy example, suppose that $X \in \{0,1,\ldots,N_x-1\}$ is uniform
+and $Y \in \{0,1,\ldots,N_y-1\}$ with conditional PMF
+\[
+    P(y|x) = \frac{1}{Z(x)} exp(-\lambda |y-x|)
+\]
+for some $\lambda$.  The constant $Z(x)$ is for normalization.  
+Complete the following MATLAB code to numerically compute and plot $H(Y)$, $H(Y|X)$ and $I(X;Y)$
+for  $N_x = 32$, $N_y = 128$, and $\lambda \in [0.5,4]$.    
+
+\begin{lstlisting}
+% Parameters
+nx = 32;
+ny = 128;
+lamTest = linspace(0.5,4,10);
+nlam = length(lamTest);
+
+
+for i = 1:nlam
+    lam = lamTest(i);
+    % TODO:
+    %   Hyx = ...
+    %   Hy = ...
+    %   mi(i) = ...
+end
+\end{lstlisting}
+
+
+\item \label{prob:bitwisellr}
+\emph{Bitwise LLR.}  Suppose two bits $(c_1,c_2)$ are mapped
+to one of four real symbol $s \in \{s_1,\ldots,s_4\}$ as shown in Table~\ref{tbl:bitwisellr} for some $B > A > 0$.  
+Assume the bits are equiprobable.  
+The symbol $s$ is transmitted through a real AWGN channel $r = s+ w$
+where $w \sim {\mathcal N}(0,\sigma^2)$.
+
+\begin{table}
+\centering
+\begin{tabular}{|c|l|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  Bits $(c_1,c_2)$ & TX symbol $s$ \\ \hline
+  00 & $s_1=-B$ \\ \hline
+  01 & $s_2=-A$ \\ \hline
+  11 & $s_3=A$ \\\hline
+  10 & $s_4=B$ \\ \hline
+  \hline
+\end{tabular}
+\caption{Problem \label{prob:bitwisellr}:  Bit to symbol mapping.}
+ \label{tbl:bitwisellr}
+\end{table}
+
+\begin{enumerate}[(a)]
+\item What is the posterior probability of $P(s=s_i|r)$ for any of the symbols $s=s_i$? 
+Leave your answer as an expression in terms of the $r$, $\sigma^2$ and the values $s_j$.
+
+\item What are the bit-wise LLRs for $c_1$ and $c_2$:
+\[
+    L_1(r) = \log \frac{p(r|c_1=1)}{p(r|c_1=0)}, \quad
+    L_2(r) = \log \frac{p(r|c_2=1)}{p(r|c_2=0)}.
+\]
+
+\item Use MATLAB to plot $L_1(r)$ and $L_2(r)$ vs.\ $r$ for $r \in (-6,6)$ with $A=1$, $B=4$ and $\sigma^2=4$.
+
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+
+
+\end{document}
+
+
