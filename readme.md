@@ -32,9 +32,7 @@ from the former TA Ish Jain.
 ## SDR Labs
 I am starting to add software-defined radio (SDR) labs.  The labs are based on the
 simple, but powerful [ADALM-Pluto boards](https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/adalm-pluto.html).
-These labs are in a separate [SDR github repo](https://github.com/sdrangan/sdrlab).
-But, I have tried to reference the material in the lecture notes
-and outline.
+The labs are being migrated from a separate [SDR github repo](https://github.com/sdrangan/sdrlab).
 
 
 ## Sequence
@@ -42,7 +40,7 @@ We will add to this section as the class progresses.
 
 * Introduction
     * Course Admin [[pdf]](./Lectures/CourseAdmin.pdf) [[Powerpoint]](./Lectures/CourseAdmin.pptx)
-    * [SDR Lab](https://github.com/sdrangan/sdrlab/tree/main/lab01_intro):  Getting started and transmitting and receiving complex baseband samples
+    * [Matlab and SDR Lab](./unit00_intro/lab):  Getting started and transmitting and receiving complex baseband samples
 * Unit 1.  Passband modulation
     * Lecture notes [[pdf]](./Lectures/Unit01_Passband.pdf) [[Powerpoint]](./Lectures/Unit01_Passband.pptx)
     * In-Class exercises:  [[Matlab]](./unit01_passband/passbandInclass.mlx) [[Soln]](./unit01_passband/passbandInclassSoln.mlx)
