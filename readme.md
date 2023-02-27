@@ -45,8 +45,8 @@ We will add to this section as the class progresses.
     * Lecture notes [[pdf]](./Lectures/Unit01_Passband.pdf) [[Powerpoint]](./Lectures/Unit01_Passband.pptx)
     * In-Class exercises:  [[Matlab]](./unit01_passband/passbandInclass.mlx) [[Soln]](./unit01_passband/passbandInclassSoln.mlx)
     * Problems [[pdf]](./unit01_passband/prob_passband.pdf) [[Latex]](./unit01_passband/prob_passband.tex)
-    * [Matlab and SDR Lab](./unit01_passband/lab_freq):  Complex exponentials, frequency and carrier offset estimation
-    * MATLAB exercise:  Simulating up- and down-conversion [[Matlab]](./unit01_passband/labPassband.mlx) [[pdf]](./unit01_passband/labPassband.pdf)
+    * [Matlab and SDR Lab 1.1](./unit01_passband/lab_freq):  Complex exponentials, frequency and carrier offset estimation
+    * [Matlab and SDR Lab 1.2](./unit01_passband/lab_passband):  Up- and down-conversion 
 * Unit 2.  Symbol mapping and transmit filtering
     * Lecture notes [[pdf]](./Lectures/Unit02_TxFilter.pdf) [[Powerpoint]](./Lectures/Unit02_TxFilter.pptx)
     * In-Class exercises:  [[Matlab]](./unit02_tx_filter/txInClass.mlx) [[Soln]](./unit02_tx_filter/txInClassSoln.mlx)
