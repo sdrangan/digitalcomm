@@ -51,8 +51,7 @@ We will add to this section as the class progresses.
     * Lecture notes [[pdf]](./Lectures/Unit02_TxFilter.pdf) [[Powerpoint]](./Lectures/Unit02_TxFilter.pptx)
     * In-Class exercises:  [[Matlab]](./unit02_tx_filter/txInClass.mlx) [[Soln]](./unit02_tx_filter/txInClassSoln.mlx)
     * Problems [[pdf]](./unit02_tx_filter/prob_tx_filter.pdf) [[Latex]](./unit02_tx_filter/prob_tx_filter.tex)
-    * MATLAB exercise:  [802.11ad TX Filter design](./unit02_tx_filter/labTxFilt.mlx)  
-    * [SDR Lab](https://github.com/sdrangan/sdrlab/tree/main/lab03_symmod):  Symbol Mapping and TX Filtering
+    * MATLAB exercise:  [Symbol Mapping and TX Filter design](./unit02_tx_filter/lab/)  
 * Unit 3.  Receive filtering    
     * Lecture notes [[pdf]](./Lectures/Unit03_RxFilter.pdf) [[Powerpoint]](./Lectures/Unit03_RxFilter.pptx)
     * In-Class exercises:  [[Matlab]](./unit03_rx_filter/rxFiltInClass.mlx) [[Soln]](./unit03_rx_filter/rxFiltInClassSoln.mlx)
