@@ -15,10 +15,13 @@ The class assumes graduate probability (stochastic processes) and
 undergraduate signals and systems.  
 Familiarity with MATLAB or equivalent language is preferred.  
 
-## Using github 
+## Using Github and MATLAB online 
 All the files in this repository are hosted on [github](https://github.com/).
 If you are not familiar with github, follow our [instructions](./basics/github.md)
-for accessing the files.
+for accessing the files.  
+
+You can also access run the MATLAB Live Scripts from MATLAB online:
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=sdrangan/digitalcomm)
 
 ## Feedback
 Any feedback is welcome.  If you find errors, have ideas for improvements,
