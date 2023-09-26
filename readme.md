@@ -15,13 +15,10 @@ The class assumes graduate probability (stochastic processes) and
 undergraduate signals and systems.  
 Familiarity with MATLAB or equivalent language is preferred.  
 
-## Using Github and MATLAB online 
+## Using github 
 All the files in this repository are hosted on [github](https://github.com/).
 If you are not familiar with github, follow our [instructions](./basics/github.md)
-for accessing the files.  
-
-You can also access run the MATLAB Live Scripts from MATLAB online:
-[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=sdrangan/digitalcomm)
+for accessing the files.
 
 ## Feedback
 Any feedback is welcome.  If you find errors, have ideas for improvements,
@@ -47,23 +44,19 @@ We will add to this section as the class progresses.
 * Unit 1.  Passband modulation
     * Lecture notes [[pdf]](./Lectures/Unit01_Passband.pdf) [[Powerpoint]](./Lectures/Unit01_Passband.pptx)
     * In-Class exercises:  [[Matlab]](./unit01_passband/passbandInclass.mlx) [[Soln]](./unit01_passband/passbandInclassSoln.mlx)
-      [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=sdrangan/digitalcomm&file=unit01_passband/passbandInclass.mlx)
     * Problems [[pdf]](./unit01_passband/prob_passband.pdf) [[Latex]](./unit01_passband/prob_passband.tex)
     * [Matlab and SDR Lab 1.1](./unit01_passband/lab_freq):  Complex exponentials, frequency and carrier offset estimation
     * [Matlab and SDR Lab 1.2](./unit01_passband/lab_passband):  Up- and down-conversion 
 * Unit 2.  Symbol mapping and transmit filtering
     * Lecture notes [[pdf]](./Lectures/Unit02_TxFilter.pdf) [[Powerpoint]](./Lectures/Unit02_TxFilter.pptx)
     * In-Class exercises:  [[Matlab]](./unit02_tx_filter/txInClass.mlx) [[Soln]](./unit02_tx_filter/txInClassSoln.mlx)
-      [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=sdrangan/digitalcomm&file=/unit02_tx_filter/txInClass.mlx)
     * Problems [[pdf]](./unit02_tx_filter/prob_tx_filter.pdf) [[Latex]](./unit02_tx_filter/prob_tx_filter.tex)
     * [MATLAB and SDR Lab](./unit02_tx_filter/lab/): Symbol Mapping and TX Filter design
 * Unit 3.  Receive filtering    
     * Lecture notes [[pdf]](./Lectures/Unit03_RxFilter.pdf) [[Powerpoint]](./Lectures/Unit03_RxFilter.pptx)
     * In-Class exercises:  [[Matlab]](./unit03_rx_filter/rxFiltInClass.mlx) [[Soln]](./unit03_rx_filter/rxFiltInClassSoln.mlx)
-      [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=sdrangan/digitalcomm&file=unit03_rx_filter/rxFiltInClass.mlx)
     * Problems [[pdf]](./unit03_rx_filter/prob_rx_filter.pdf) [[Latex]](./unit03_rx_filter/prob_rx_filter.tex)
-    * MATLAB exercise:  [Building a 5G channel sounder](./unit03_rx_filter/labChanSounder.mlx)
-    * [SDR Lab](https://github.com/sdrangan/sdrlab/tree/main/lab04_chansounder):  Building a channel sounder
+    * [MATLAB and SDR Lab](./unit03_rx_filter/lab):  Simulating and sounding a multi-path channel
 * Unit 4.  Signal space theory
     * Lecture notes [[pdf]](./Lectures/Unit04_SignalSpace.pdf) [[Powerpoint]](./Lectures/Unit04_SignalSpace.pptx)
     * Problems [[pdf]](./unit04_sig_space/prob_sig_space.pdf) [[Latex]](./unit04_sig_space/prob_sig_space.tex)
