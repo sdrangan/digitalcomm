@@ -1,6 +1,6 @@
-# Lab:  Multi-path channel models are widely-used in the simulating wireless systems.  
+# Lab: Multi-Path Channel Simulation and Channel Sounding
 
-In this lab, we will build a simple simulator for a static multi-path channel.  We will also show how to build a channel sounder, which is a device that measures the channel response between a transmitter (TX) and receiver (RX).  Channel sounders are key for researchers studying wireless channel propagation.  They are also useful in bringing up any SDR platform to ensure the wideband response through the TX and RX chains is as expected.  Indeed,  after ensuring you can receive a tone correctly, use a channel sounder to make sure the device works and correctly characterize the TX and RX filters.
+Multi-path channel models are widely-used in the simulating wireless systems.  In this lab, we will build a simple simulator for a static multi-path channel.  We will also show how to build a channel sounder, which is a device that measures the channel response between a transmitter (TX) and receiver (RX).  Channel sounders are key for researchers studying wireless channel propagation.  They are also useful in bringing up any SDR platform to ensure the wideband response through the TX and RX chains is as expected.  Indeed,  after ensuring you can receive a tone correctly, use a channel sounder to make sure the device works and correctly characterize the TX and RX filters.
 
 In going through this lab, you will learn to:
 
