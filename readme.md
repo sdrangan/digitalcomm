@@ -88,5 +88,7 @@ We will add to this section as the class progresses.
 * Unit 11.  Information theory
     * Lecture notes [[pdf]](./Lectures/Unit11_Capacity.pdf) [[Powerpoint]](./Lectures/Unit11_Capacity.pptx)
     * Problems:  [[pdf]](./unit11_capacity/prob_it.pdf) [[Latex]](./unit11_capacity/prob_it.tex)
+* Unit 12.  LDPC codes
+    * Lecture notes [[pdf]](./Lectures/Unit12_LDPC.pdf) [[Powerpoint]](./Lectures/Unit12_LDPC.pptx)
 
 
